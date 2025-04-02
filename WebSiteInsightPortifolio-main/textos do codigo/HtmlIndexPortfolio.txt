@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Site Engenheiro Sennk</title>
+  <!-- =========== css files Start ============ -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/skins/color-1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/style-switcher-2.css">
+  <!-- =========== Style Switcher ============ -->
+  <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
+  <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" >
+  <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
+  <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
+  <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
+<script src="path/to/typed.min.js"></script> 
+<!-- ================== sociais =============== -->
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- =========== //css files End ============ -->
+  </head>
+<body>
+  
+<!--============ Main Container Start ======== -->
+  <div class="main-container">
+<!-- ======= Aside Start ========== -->
+    <div class="aside" id="aside">
+      <div class="logo">
+        <a href="#"><span>S</span>ena</a>
+      </div>
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <ul class="nav">
+        <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+        <li><a href="#services"><i class="fa fa-list"></i>Services</a></li>
+        <li><a href="#portfolio"><i class="fa fa-briefcase"></i>Portifolio</a></li>
+        <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+      </ul>
+    </div>
+<!--========= ////Aside End ========== -->
+<!-- ============ Main Content Start =========== -->
+    <div class="main-content">
+<!-- ============ Home Section Start =========  -->
+      <section class="home active section" id="home">
+        <div class="container">
+          <div class="row">
+            <div class="home-info padd-15">
+              <h3 class="hello">HI, I'm Enginner<span class="name">Sena</span></h3>
+              <h3 class="my-specification">Specification
+                <span class="typing">Web Developer Full Stack</span>
+                  <p>Full Stack developer | Freelnance | Graduating in Software Engineering.
+                    Building the future, one code at a time. 
+                    </p>
+                      <div>
+                      </div>
+                        <h6 class="ptbr">PT-BR</h6>
+                          <p><strong>Desenvolvedor Full Stack | Freelnace | Graduando em Engenharia de Software.
+                            Construindo o futuro! Um código de cada vez. </strong> </p> 
+              <a href="https://drive.google.com/file/d/1N1IXEdelsfX4bYwS9kELsPEB7eUmRwlF/view?usp=sharing" class="btn">Download CV </a>
+            </div>
+            <div class="home-img padd -15">
+              <img src="img/PNG WORK/perfil1.png" alt="" >
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      </div>
+    </div>
+<!-- ===== Home Section End ===== -->
+ <!-- ==== About Section Start ===== -->
+<section class ="section about " id="about">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>About Me</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="about-content padd-15">
+             <div class="row">
+                <div class="about-text padd-15">
+                    <h3>I'm Diego Sena <span>Web Developer Full Stack</span></h3>
+                    <p>
+                      Natural Leader: Enthusiastic, determined, people manager and logistics manager.
+                      I strongly believe in my ability to constantly seek efficient solutions, with less effort, without compromising the quality of the project, respecting the schedule, always seeking a very clean flowchart, thus offering a comfortable, friendly work environment, committed to deadlines, goals and above all with professionalism, character and delivery.
+                    </p>
+                    <h5 class="ptbr">Pt-BR</h5>
+                    <p>Líder Nato: Entusiasta,Obstinado.gestor de pessoas e gestor de lógistica.
+                      Acredito muito em minha habilidade de  buscar constantemente  soluções eficientes,com menor esforço, sem comprometer a qualidade do projeto, respeitando o cronograma,buscando sempre um fluxograma bem limpo, oferecendo assim, um ambiente de trabalho confortavel, amistoso, comprometido com prazos,metas e acima de tudo com profissionalismo, carater e entrega.</p>
+                </div>
+             </div> 
+<!-- PERSONAL -->
+             <div class="row">
+                <div class="personal-info padd-15">
+                    <div class="row">
+                        <div class="info-item padd-15">
+                            <p>Birthday : <span>09 jan 1995</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Age : <span>30</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Web: <span>#</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Email : <span>engenheirosennk@gmail.com</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Degree : <span>BES</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Phone : <span>+55 71 9 9280-9135</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>City : <span>Candeias-BA</span></p>
+                        </div>
+                        <div class="info-item padd-15">
+                            <p>Freelnace : <span>Availabe</span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="buttons padd-15">
+                  
+                        <a href="#contact" data-section-index="1" class="btn hire-me">hire-me</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skill-item">
+                      <h5>HTML</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 76%;"></div>
+                         <div class="skill-percent padd-15">76%</div> 
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>CSS</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 86%;"></div>
+                         <div class="skill-percent">86%</div> 
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>JS</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 66%;"></div>
+                         <div class="skill-percent">66%</div> 
+                      </div>
+                  </div>
+                </div> 
+             </div>    
+            </div>
+            <!-- personal end -->
+            <div class="row">
+              <div class="education padd-15">
+                <h3 class="title">Relevant Education</h3>
+                <div class="row">
+                  <div class="timeline-box padd-15">
+                    <div class="timeline shadow-dark">
+                      <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2024 - 2025
+                        </h3>
+                        <h4 class="timeline-title">Engineer Software</h4>
+                        <p class="timeline-text">Undergraduate in Software Engineering <span class="ptbr">Anhanguera/Unopar</span></p>
+                       </div>
+                       <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2011 - 2012
+                        </h3>
+                        <h4 class="timeline-title">Administrative Assistant</h4>
+                        <p class="timeline-text"><span class="ptbr">Sebrae-BA</span></p>
+                       </div>
+                       <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2013 - 2016
+                        </h3>
+                        <h4 class="timeline-title">Electronics Technician</h4>
+                        <p class="timeline-text"><span class="ptbr">LedNotebook</span></p>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="experience padd-15">
+                <h3 class="title">Relevant Experiences</h3>
+                <div class="row">
+                  <div class="timeline-box padd-15">
+                    <div class="timeline shadow-dark">
+                      <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2024 - 2025
+                        </h3>
+                        <h4 class="timeline-title">Engineer Software autonomous <span class="ptbr">Anhanguera/Unopar</span></h4>
+                        <p class="timeline-text"></p>
+                       </div>
+                       <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2011 - 2012
+                        </h3>
+                        <h4 class="timeline-title">Administrative Assistant <span class="ptbr">Sebrae-BA</span></h4>
+                        <p class="timeline-text"></p>
+                       </div>
+                       <!-- ===== timeline item ===== -->
+                       <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i>2013 - 2016
+                        </h3>
+                        <h4 class="timeline-title">Electronics Technician <span class="ptbr">LedNotebook</span></h4>
+                        <p class="timeline-text"></p>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- ==== About Section End ===== -->
+<!-- ===== Service Section Start ===== -->
+<!-- ==== Service item start ===== -->
+    <section class="service section " id="services" >
+      <div class="container">
+        <div class="row">
+          <div class="section-title padd-15">
+            <h2>Services</h2>
+          </div>
+          <div class="row">
+ <div class="service-item padd-15">
+  <div class="service-item-inner">
+    <div class="icon">
+      <i class="fa fa-desktop"></i>
+    </div>
+    <h4>Desktop Developer</h4>
+    <p>Desenvolvimento de Aplicativos Desktop|Criação de interfaces gráficas|Lógica de programação|Manutenção e Atualização|Deploy e Distribuição|Suporte Técnico</p>
+  </div>
+ </div>
+  <!-- ====== Service item Start =====  -->
+  <div class="service-item padd-15">
+    <div class="service-item-inner">
+      <div class="icon">
+        <i class="fa fa-code"></i>
+      </div>
+      <h4>Backend Developer</h4>
+      <p>Desenvolvimento da Lógica de Negócio|Gerenciamento de Banco de Dados|Criação de APIs|Integração com Outros Sistemas|Gerenciamento de Servidores|Segurança da Aplicação</p>
+    </div>
+   </div>
+  <!-- ====== Service item End =====  -->
+ <!-- ====== Service item Start =====  -->
+ <div class="service-item padd-15">
+  <div class="service-item-inner">
+    <div class="icon">
+      <i class="fa fa-mobile"></i>
+    </div>
+    <h4>Mobile Developer</h4>
+    <p>Desenvolvimento de Aplicativos Nativos|Desenvolvimento de Aplicativos Híbridos|Design de Interfaces (UI/UX)|Integração com Backends|Deploy e Distribuição|</p>
+  </div>
+ </div>
+<!-- ===== Services Section End ===== -->
+ <!-- ====== Service item Start =====  -->
+ <div class="service-item padd-15">
+  <div class="service-item-inner">
+    <div class="icon">
+      <i class="fa fa-palette"></i>
+    </div>
+    <h4>Frontend Developer</h4>
+    <p>Criação de Interfaces Visuais|Desenvolvimento de Interações|Otimização de Desempenho|Integração com Backends|</p>
+  </div>
+ </div>
+<!-- ====== Service item Start =====  -->
+<div class="service-item padd-15">
+  <div class="service-item-inner">
+    <div class="icon">
+      <i class="fa fa-laptop-code"></i>
+    </div>
+    <h4>Remote Support and maintenance</h4>
+    <p>Automação de Tarefas|Gerenciamento de Infraestrutura|Gerenciamento de Versão|Resolução de Problemas|Segurança|Melhoria Contínua
+    </p>
+  </div>
+ </div>
+<!-- ===== Services Section End ===== -->
+ <!-- ====== Service item Start =====  -->
+<div class="service-item padd-15">
+  <div class="service-item-inner">
+    <div class="icon">
+      <i class="fa fa-bullhorn"></i>
+    </div>
+    <h4>AdSense</h4>
+    <p>Integração do código AdSense|Customização de anúncios|Otimização para melhor desempenho|Criação de relatórios|Integração com outras plataformas</p>
+  </div>
+ </div>
+<!-- ===== Services Section End ===== -->
+ 
+</div>
+</div>
+</div>
+</section>   
+<!-- ==== Service item end ===== -->
+<!-- ===== Portifolio Section Start ===== -->
+<section class="portfolio section " id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Portifolio</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="portfolio-heading padd-15">
+        <h2>Project Examples:</h2>
+      </div>
+    </div>
+    <div class="row">
+<!-- ===== Portifolio Section Start ===== --> 
+      <div class="portfolio-item padd15">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="img/portfolio-1.jpg" alt="" >
+          </div>
+        </div>
+      </div>
+<!-- ===== Portifolio Section End ===== --> 
+ <!-- ===== Portifolio Section Start ===== --> 
+ <div class="portfolio-item padd15">
+  <div class="portfolio-item-inner shadow-dark">
+    <div class="portfolio-img">
+      <img src="img/portfolio-2.jpg" alt="" >
+    </div>
+  </div>
+</div>
+<!-- ===== Portifolio Section End ===== -->
+ <!-- ===== Portifolio Section Start ===== --> 
+ <div class="portfolio-item padd15">
+  <div class="portfolio-item-inner shadow-dark">
+    <div class="portfolio-img">
+      <img src="img/portfolio-3.jpg" alt="" >
+    </div>
+  </div>
+</div>
+<!-- ===== Portifolio Section End ===== -->
+ <!-- ===== Portifolio Section Start ===== --> 
+ <div class="portfolio-item padd15">
+  <div class="portfolio-item-inner shadow-dark">
+    <div class="portfolio-img">
+      <img src="img/portfolio-4.jpg" alt="" >
+    </div>
+  </div>
+</div>
+<!-- ===== Portifolio Section End ===== --> 
+ <!-- ===== Portifolio Section Start ===== --> 
+ <div class="portfolio-item padd15">
+  <div class="portfolio-item-inner shadow-dark">
+    <div class="portfolio-img">
+      <img src="img/portfolio-5.jpg" alt="" >
+    </div>
+  </div>
+</div>
+<!-- ===== Portifolio Section End ===== -->  
+ <!-- ===== Portifolio Section Start ===== --> 
+ <div class="portfolio-item padd15">
+  <div class="portfolio-item-inner shadow-dark">
+    <div class="portfolio-img">
+      <img src="img/portfolio-6.jpg" alt="" >
+    </div>
+  </div>
+</div>
+<!-- ===== Portifolio Section End ===== -->  
+    </div>
+  </div>
+</section>
+<!-- ===== Portifolio Section End ===== -->
+<!-- ===== Contact Section Start ===== -->
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Contact Me</h2>
+      </div>
+    </div>
+    <h3 class="contact-title padd-15">Have You Any Questions</h3>
+    <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
+    <div class="row">
+  <!-- ===== Contact info item start ===== -->
+   <div class="contact-info-item padd-15">
+      <div class="icon"><i class="fa fa-phone"></i>
+        <h4>Call Us On</h4>
+        <p>+55 71 9 9280-9135</p>
+      </div>
+    </div>
+  <!-- ===== Contact info item End ===== -->
+   <!-- ===== Contact info item start ===== -->
+   <div class="contact-info-item padd-15">
+    <div class="icon"><i class="fa fa-map-marked-alt"></i>
+      <h4>Officie</h4>
+      <p>Candeias-BA</p>
+    </div>
+  </div>
+<!-- ===== Contact info item End ===== -->
+ <!-- ===== Contact info item start ===== -->
+ <div class="contact-info-item padd-15">
+  <div class="icon"><i class="fa fa-envelope"></i>
+    <h4>Email</h4>
+    <p>engenheirosennk@gmail.com</p>
+  </div>
+</div>
+<!-- ===== Contact info item End ===== -->
+ <!-- ===== Contact info item start ===== -->
+ <div class="contact-info-item padd-15">
+  <div class="icon"><i class="fa fa-globe-americas"></i>
+    <h4>Website</h4>
+    <p>"linktr.ee/engsennk"</p>
+  </div>
+</div>
+<!-- ===== Contact info item End ===== -->
+   </div>
+   <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
+   <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
+<!-- ===== Contact Form Start ===== -->
+ <div class="row">
+  <div class="contact-form padd-15">
+    <div class="row">
+      <div class="form-item col-6 padd-15">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Name">
+        </div>
+      </div>
+      <div class="form-item col-6 padd-15">
+        <div class="form-group">
+          <input type="Email" class="form-control" placeholder="Email">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-item col-12 padd-15">
+        <div class="form-group">
+          <textarea name="Text" class="form-control" id="" placeholder="Subject"></textarea>
+        </div>
+      </div>
+
+      <div class="form-item col-12 padd-15">
+        <div class="form-group">
+          <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-item col-12 padd-15">
+        <button type="submit" class="btn">Send Message</button>
+        
+      </div>
+    </div>
+  </div>
+ </div>
+<!-- ===== Contact Form End===== -->
+   </div>
+  </section>
+
+<!-- ===== Contact info item End ===== -->
+
+      
+<!-- ===== Main Content End -->
+<!-- ===== Main Container End =====  -->
+<!-- ====== Style Switcher Start ======== -->
+<div class="style-switcher">
+  <div class="style-switcher-toggler s-icon">
+    <i class="fas fa-cog fa-spin"></i>
+  </div>
+  <div class="day-night s-icon">
+    <i class="fas fa-moon"></i>
+  </div>
+  <h4>Theme Colors</h4>
+  <div class="colors">
+    <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+    <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+    <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+    <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+    <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+
+  </div>
+</div>
+ 
+<!-- ====== Style Switcher End ======== -->
+<!-- ================ sociais ================ -->
+ 
+<section class="sociais medias section" id="social-medias">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Social Medias</h2>
+        <div class="sociais-info-item padd-15">
+        </div>
+        <div class="logosocias">
+          <a href="https://github.com/EngSennk"><span><i class='bx bxl-github'></i></span></a>
+          <a href="https://www.linkedin.com/in/engenheirosennk13/"><span><i class='bx bxl-linkedin-square' ></i></span></a>
+          <a href="https://api.whatsapp.com/send?phone=5571992809135"><i class='bx bxl-whatsapp' ></i></span></a>
+          <a href="https://instagram.com/engdsena"><span><i class='bx bxl-instagram' ></i></span></a>
+          <a href="https://www.facebook.com/profile.php?id=61571375866279"><span><i class='bx bxl-facebook-circle' ></i></span></a>
+          <a href="https://x.com/EngenheiroSennk"><span><i class='bx bxl-twitter' ></i></span></a>
+           </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- ================ sociais ================ -->
+
+
+<!--=============   js files ============= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+referrerpolicy="no-referrer"></script>
+<script src="js/script.js"></script>
+<script src="js/style-switcher-2.js"></script>
+<!--=============  // js files ============= -->
+</body>
+</html>
