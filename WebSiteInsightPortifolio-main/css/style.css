@@ -57,7 +57,7 @@ ul
 {
     background: var(--bg-black-900);
     min-height: 100vh;
-    display: block=;
+    display: block;
     padding: 0 30px;
     opacity: 1;
     left: 270px;
@@ -188,6 +188,28 @@ ul
     z-index: 10;
     transition: all 0.3s ease;
 }
+/*======== aside toggle */
+
+    .aside {
+        /* Estilos iniciais do seu aside (por exemplo, largura, cor de fundo, etc.) */
+        left: -300px; /* Esconde o aside inicialmente (ajuste o valor conforme a largura) */
+        position: fixed; /* Ou absolute, dependendo do seu layout */
+        top: 0;
+        height: 100%;
+        transition: left 0.3s ease; /* Adiciona uma transição suave */
+    }
+    
+    .aside.open {
+        left: 0; /* Mostra o aside quando a classe 'open' é adicionada */
+    }
+    
+    /* Estilos para o botão de menu (opcional) */
+    .menu-toggle {
+        /* Estilos do seu botão de menu */
+        cursor: pointer;
+        /* Adicione outros estilos conforme necessário */
+    }
+
 .aside .logo
 {
     position: absolute;
@@ -204,6 +226,23 @@ ul
     letter-spacing: 5px;
     position: relative;
 }
+#menu-toggle .bar 
+{
+    
+    font-size: 2px;
+    letter-spacing: 5px;
+    position: fixed;
+    top: 10px;
+    content: '';
+    background: var(--skin-color);
+    display: block;
+    height: 10px;
+    width: 30px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+
 .aside .logo a span
 {
     font-family: 'Clicker Script',cursive;
@@ -381,10 +420,16 @@ h3.my-specification
     font-size: 20px;
     color: var(--text-black-900);
 }
+.home-info a 
+{   
+    font-size: 25px;
+    color: black;
+    line-height: 25px;
+}
 .home .home-img
 {
     flex: 0 0 40%;
-    max-width: 40%;
+    max-width: 90%;
     text-align: center;
     position: relative;
      
@@ -398,7 +443,7 @@ h3.my-specification
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: 20px;
-    bottom: -40px;
+    bottom: -80px;
 }
 .home-img::before
 {
@@ -406,18 +451,20 @@ h3.my-specification
    position: absolute;
    height: 80px;
    width: 80px;
-   
    border-top: 10px solid var(--skin-color);
    border-left: 10px solid var(--skin-color);
-   left: -20px;
-   top: -40px;
+   left: -10px;
+   top: -10px;
+   
 
 }
 .home .home-img img
 {
-   margin: auto;
+   /* margin: auto; */
+   width: 100%;
    border-radius: 5px;
-   height: 400px;
+   height: 500px;   
+    object-fit: cover;
 }
 .ptbr 
 {   
@@ -704,7 +751,7 @@ h3.my-specification
 .portfolio .portfolio-heading h2
 {
     text-align: center;
-    font-size: 30px;
+    font-size: 0px;
     color: var(--skin-color);
     font-weight: 500;
 }
@@ -713,6 +760,14 @@ h3.my-specification
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
+}
+.portfolio .portfolio-item span
+{
+    font-size: 20px;
+    color: var(--text-black-900);
+    font-weight: 700;
+
+    margin-bottom: 10px;
 }
 .portfolio .portfolio-item-inner
 {
@@ -755,7 +810,7 @@ h3.my-specification
 }
 .contact .contact-info-item .icon .fa
 {
-    font-size: 25px;
+    font-size:30px;
     color: var(--skin-color);
 }
 .contact .contact-info-item h4 
@@ -772,6 +827,11 @@ h3.my-specification
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
+}
+.contact .contact-info-item a 
+{
+    font-size: 30px;
+
 }
 .contact .contact-form  
 {
@@ -868,7 +928,8 @@ h3.my-specification
     }
     .aside
     {
-        left: -270px;
+        left: 270px;
+        padding: 20px;  
     }
     .aside.open
     {
@@ -876,12 +937,12 @@ h3.my-specification
     }
     .aside .nav-toggler
     {
-        display: flex;
-        left: 30px;
+        display: fixed;
+        left: -20px;
     }
     .aside .nav-toggler.open 
     {
-        left: 300px;
+        left: -300px;
     }
     .section
     {

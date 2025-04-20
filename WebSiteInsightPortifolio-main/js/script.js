@@ -11,17 +11,17 @@ window.addEventListener('load', function() {
 
 // ============================= Menu hamburguer ==========================
 
-// const menuToggle = document.getElementById('menu-toggle');
-// const navList = document.getElementById('nav-list');
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
 
-// menuToggle.addEventListener('click', () => {
-//     navList.classList.toggle('open');
-//     menuToggle.setAttribute('aria-expanded', navList.classList.contains('open'));
-// });
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+});
 
 /* ================================== Aside =========================== */ 
 const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
+    // navList = nav.querySelectorAll("li"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll(".section"),
     totalSection = allSection.length;
@@ -32,7 +32,7 @@ for (let i = 0; i < totalNavList; i++) {
         for (let j = 0; j < totalNavList; j++) {
             if (navList[j].querySelector("a").classList.contains("active")) {
                 addBackSection(j);
-                // allSection[j].classList.add("back-section");
+                allSection[j].classList.add("back-section");
             }
             navList[j].querySelector("a").classList.remove("active");
         }

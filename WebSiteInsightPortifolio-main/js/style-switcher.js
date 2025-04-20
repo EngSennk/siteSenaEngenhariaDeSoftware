@@ -10,6 +10,23 @@ window.addEventListener("scroll", () => {
         document.querySelector(".style-switcher").classList.remove("open");
     }
 });
+// ============================= toggle aside section ================== // 
+// ============================= toggle aside ==================
+const aside = document.querySelector(".aside"); // Seleciona o elemento aside
+const menuToggle = document.querySelector("#menu-toggle"); // Seleciona o botão de menu (pelo ID)
+
+if (menuToggle) { // Verifica se o botão de menu existe no DOM
+    menuToggle.addEventListener("click", () => {
+        aside.classList.toggle("open"); // Adiciona/remove a classe 'open' do aside
+    });
+}
+
+// ================== hide aside on scroll ======================
+window.addEventListener("scroll", () => {
+    if (aside.classList.contains("open")) {
+        aside.classList.remove("open"); // Remove a classe 'open' se o aside estiver aberto durante o scroll
+    }
+});
 
 // ============================= theme colors ============================
 const alternateStyles = document.querySelectorAll(".alternate-style");
