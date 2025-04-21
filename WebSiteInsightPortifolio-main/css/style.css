@@ -177,10 +177,10 @@ ul
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
-    left: 0;
+    margin-left: -300px;
     top: 0;
-    padding: 30px;
-    height: 100%;
+    padding: 20px;
+    height: 50%;
     border-right: 1px solid var(--bg-black-50);
     display: flex;
     justify-content: center;
@@ -191,23 +191,23 @@ ul
 /*======== aside toggle */
 
     .aside {
-        /* Estilos iniciais do seu aside (por exemplo, largura, cor de fundo, etc.) */
-        left: -300px; /* Esconde o aside inicialmente (ajuste o valor conforme a largura) */
-        position: fixed; /* Ou absolute, dependendo do seu layout */
+        right: 0;
+        left: 0px; 
+        position: block;
         top: 0;
         height: 100%;
         transition: left 0.3s ease; /* Adiciona uma transição suave */
     }
     
     .aside.open {
-        left: 0; /* Mostra o aside quando a classe 'open' é adicionada */
+        left: 0;
     }
     
     /* Estilos para o botão de menu (opcional) */
     .menu-toggle {
-        /* Estilos do seu botão de menu */
+      
         cursor: pointer;
-        /* Adicione outros estilos conforme necessário */
+    
     }
 
 .aside .logo
@@ -226,22 +226,54 @@ ul
     letter-spacing: 5px;
     position: relative;
 }
-#menu-toggle .bar 
+#menu-toggle .bar1
 {
     
-    font-size: 2px;
+    font-size: 1px;
     letter-spacing: 5px;
     position: fixed;
-    top: 10px;
+    top: 200px;
     content: '';
     background: var(--skin-color);
     display: block;
     height: 10px;
-    width: 30px;
+    width: 50px;
     margin: 5px auto;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-
+#menu-toggle .bar2
+{
+    
+    font-size: 1px;
+    letter-spacing: 5px;
+    position: fixed;
+    top: 220px;
+    content: '';
+    background: var(--skin-color);
+    display: block;
+    height: 10px;
+    width: 50px;
+    margin: 5px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#menu-toggle .bar3
+{
+    
+    font-size: 1px;
+    letter-spacing: 5px;
+    position: fixed;
+    top: 240px;
+    content: '';
+    background: var(--skin-color);
+    display: block;
+    height: 10px;
+    width: 50px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
 .aside .logo a span
 {
@@ -920,14 +952,18 @@ h3.my-specification
     font-size: 24px; 
   }
 
-@media (max-width:1199px)
+@media (min-width:1199px)
 {
     .section .container 
     {
         padding-top: 70px;
+        margin-left: 270px;
+        padding-bottom: 70px;
     }
     .aside
-    {
+    {   width: 200px;
+        height: 50;
+        margin-left: -300px;
         left: 270px;
         padding: 20px;  
     }
@@ -942,7 +978,7 @@ h3.my-specification
     }
     .aside .nav-toggler.open 
     {
-        left: -300px;
+        left: 300px;
     }
     .section
     {
