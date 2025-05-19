@@ -609,7 +609,7 @@ h3.my-specification {
 }
 
 /* ====================================================================
-   SERVICE SECTION - MOBILE-FIRST (SEM ALTERAÇÕES SIGNIFICATIVAS NESTA VERSÃO)
+   SERVICE SECTION - MOBILE-FIRST
    ==================================================================== */
 .service .container {
     padding-bottom: 40px;
@@ -628,14 +628,15 @@ h3.my-specification {
     padding: 30px 15px;
     text-align: center;
     overflow: hidden; /* Importante para o brilho */
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
+
+    transition: all 0.3s ease; /* Transição para todas as propriedades em 0.3 segundos */
+    position: relative; /* Necessário para posicionar o brilho (pseudo-elemento) */
+    z-index: 1; /* Garante que o conteúdo esteja acima do brilho */
 }
 
 .service .service-item .service-item-inner:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Faz o item crescer 5% ao passar o mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
 
 .service .service-item .service-item-inner::before {
@@ -645,15 +646,15 @@ h3.my-specification {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%);
-    opacity: 0;
+    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%); /* Brilho radial */
+    opacity: 0; /* Começa invisível */
     transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
+    pointer-events: none; /* Garante que o brilho não interfira com eventos do mouse */
+    z-index: -1; /* Coloca o brilho atrás do conteúdo */
 }
 
 .service .service-item .service-item-inner:hover::before {
-    opacity: 0.2;
+    opacity: 0.2; /* Torna o brilho visível (20% de opacidade) */
 }
 
 .service .service-item .service-item-inner .icon {
@@ -711,10 +712,8 @@ h3.my-specification {
 
 .portfolio .portfolio-heading h2 {
     text-align: center;
-    /* Font-size: 0px pode esconder o título se não for o objetivo. */
-    /* Se o objetivo é que o título 'Project Examples:' apareça, ajuste para um valor maior. */
-    font-size: 28px; /* Ajustei para um tamanho visível */
-    color: var(--skin-color); /* Usando a variável de cor principal */
+    font-size: 28px; /* Ajustado para ser visível */
+    color: var(--skin-color);
     font-weight: 500;
 }
 
@@ -724,13 +723,7 @@ h3.my-specification {
     margin-bottom: 30px;
 }
 
-/* REMOVIDO: .portfolio .portfolio-item span, pois agora temos .portfolio-text h4 e p */
- .portfolio .portfolio-item span {
-    font-size: 20px;
-    color: var(--text-black-900);
-    font-weight: 700;
-    margin-bottom: 10px;
-} 
+/* REMOVIDO: Regras para .portfolio .portfolio-item span, pois agora usamos h4 e p dentro de .portfolio-text */
 
 .portfolio .portfolio-item-inner {
     border: 1px solid var(--bg-black-50);
@@ -738,9 +731,115 @@ h3.my-specification {
     overflow: hidden; /* CRÍTICO: Para esconder o overflow do zoom da imagem e do texto inicial */
     cursor: pointer;
     position: relative; /* CRÍTICO: Para posicionar o overlay .portfolio-text */
-    z-index: 1; 
-}/* Garante que o conteúdo
+    z-index: 1; /* Garante que o conteúdo esteja acima do brilho */
+    transition: all 0.3s ease; /* Transição para transform, box-shadow */
+}
 
+.portfolio .portfolio-item-inner:hover {
+    transform: scale(1.05); /* Faz o item crescer 5% ao passar o mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
+}
+
+.portfolio .portfolio-item-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%); /* Brilho radial */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Garante que o brilho não interfira com eventos do mouse */
+    z-index: -1; /* Coloca o brilho atrás do conteúdo */
+}
+
+.portfolio .portfolio-item-inner:hover::before {
+    opacity: 0.2; /* Torna o brilho visível (20% de opacidade) */
+}
+
+/* IMAGEM DO PORTFÓLIO */
+.portfolio-item-inner .portfolio-img {
+    height: 200px; /* Altura fixa para as imagens do portfólio, ajuste se necessário */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    position: relative; /* Pode ser útil se você quiser um ícone na imagem */
+}
+
+.portfolio-item-inner .portfolio-img img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Faz a imagem preencher a div .portfolio-img */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    transition: transform 0.3s ease; /* Transição para o zoom da imagem no hover */
+}
+
+/* TEXTO DO OVERLAY (TITULO E DESCRIÇÃO DO PORTFÓLIO) */
+.portfolio-item-inner .portfolio-text {
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo semi-transparente para o overlay */
+    position: absolute; /* CRÍTICO: Posiciona o texto sobre a imagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Para centralizar o conteúdo */
+    flex-direction: column; /* Conteúdo em coluna (título e parágrafo) */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura/altura total */
+
+    opacity: 0; /* CRÍTICO: Inicialmente invisível */
+    visibility: hidden; /* CRÍTICO: Ajuda a remover da árvore de acessibilidade quando invisível */
+    /* As transições abaixo são para a animação do overlay */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    transform: translateY(100%); /* Começa escondido abaixo, para um efeito de "subida" */
+}
+
+.portfolio-item-inner .portfolio-text h4 {
+    font-size: 22px;
+    color: var(--skin-color); /* Cor que se destaca no overlay */
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.portfolio-item-inner .portfolio-text p {
+    font-size: 15px;
+    color: #e0e0e0; /* Cor de texto clara para contraste */
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 0; /* Remove margem superior padrão do p */
+}
+
+/* EFEITOS NO HOVER ESPECÍFICOS PARA O PORTFÓLIO */
+.portfolio-item-inner:hover .portfolio-img img {
+    transform: scale(1.15); /* Zoom um pouco maior na imagem no hover */
+}
+
+.portfolio-item-inner:hover .portfolio-text {
+    opacity: 1; /* Torna o texto visível */
+    visibility: visible; /* Torna o texto visível para acessibilidade */
+    transform: translateY(0); /* Move o texto para sua posição original */
+}
+
+/* ====================================================================
+   MEDIA QUERIES (Exemplo de responsividade para tablets e desktops)
+   ==================================================================== */
+@media (min-width: 768px) { /* Para telas maiores que 768px (tablets e desktops) */
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 50%; /* 2 colunas */
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) { /* Para telas maiores que 992px (desktops maiores) */
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 33.33%; /* 3 colunas */
+        max-width: 33.33%;
+    }
+}
 /* ====================================================================
    CONTACT SECTION - MOBILE-FIRST
    ==================================================================== */
