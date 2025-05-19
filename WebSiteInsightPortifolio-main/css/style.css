@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&family=Ysabeau+SC:wght@1..1000&display=swap');
-:root
-{
+
+:root {
     --bg-black-900: #f2f2fc;
     --bg-black-100: #fdf9ff;
-    --bg-black-50:  #e8dfec;
+    --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #302e4d;
-    --text-black-50:  #504e70;
+    --text-black-50: #504e70;
 }
 
 /* Estilos para o modo escuro */
@@ -15,52 +15,46 @@ body.dark {
     color: #fff;
     --bg-black-900: #0a0a0a;
     --bg-black-100: #000000;
-    --bg-black-50:  #000000;
+    --bg-black-50: #000000;
     --text-black-900: #dadada;
     --text-black-700: #bdb39d;
-   
 }
-
 
 /* Estilos padrão (modo claro) */
-body
-{   
+body {
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif; /* Corrigido: vírgula entre as fontes */
     overflow-y: scroll;
-   
 }
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     outline: none;
-    text-decoration:none;
+    text-decoration: none;
     box-sizing: border-box;
 }
-::before, ::after 
-{
-box-sizing: border-box;
 
+::before,
+::after {
+    box-sizing: border-box;
 }
-ul
-{
+
+ul {
     list-style: none;
 }
-.section.back-section
-{
-    z-index: 1;
-}
-.section
-{
+
+/* ====================================================================
+   GLOBAL SECTION E CONTAINER - MOBILE-FIRST
+   ==================================================================== */
+.section {
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-    padding: 0 30px;
+    padding: 0 15px; /* Padding menor para mobile */
     opacity: 1;
-    left: 270px;
+    position: relative; /* Ajuste para controlar com transform */
     top: 0;
     right: 0;
     bottom: 0;
@@ -68,61 +62,62 @@ ul
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.3s ease;
-    
-
+    /* Em mobile, a section não é deslocada inicialmente */
+    left: 0; /* Padrão em mobile */
 }
-.section.active
-{
+
+.section.active {
     z-index: 2;
     opacity: 1;
     animation: slideSection 1s ease;
 }
-@keyframes slideSection
-{
-    0%
-    {
+
+@keyframes slideSection {
+    0% {
         transform: translateX(100%);
     }
-    100%
-    {
+    100% {
         transform: translateX(0%);
     }
 }
-.hidden
-{
+
+.hidden {
     display: none !important;
 }
-.padd-15
-{
+
+.padd-15 {
     padding-left: 15px;
-    padding-right: 15px; 
+    padding-right: 15px;
 }
-.container
-{
+
+.container {
     max-width: 1100px;
     width: 100%;
     margin: auto;
 }
-.section .container
-{
+
+.section .container {
     padding-top: 60px;
     padding-bottom: 70px;
 }
-.section-title
-{
+
+/* ====================================================================
+   SECTION TITLE
+   ==================================================================== */
+.section-title {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
 }
-.section-title h2
-{
+
+.section-title h2 {
     font-size: 40px;
     color: var(--text-black-900);
     font-weight: 700;
     position: relative;
 }
-.section-title h2::before
-{
+
+.section-title h2::before {
     content: '';
     height: 4px;
     width: 50px;
@@ -131,8 +126,8 @@ ul
     top: 100%;
     left: 0;
 }
-.section-title h2::after
-{
+
+.section-title h2::after {
     content: '';
     height: 4px;
     width: 25px;
@@ -142,16 +137,19 @@ ul
     left: 0;
     margin-top: 8px;
 }
-.row
-{
+
+/* ====================================================================
+   ROW E BUTTON
+   ==================================================================== */
+.row {
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
     position: relative;
 }
-.btn
-{
+
+.btn {
     font-size: 16px;
     font-weight: 500;
     padding: 12px 35px;
@@ -163,62 +161,48 @@ ul
     background: var(--skin-color);
     transition: all 0.3s ease;
 }
-.btn:hover
-{
-    transform: scale(1.5);
+
+.btn:hover {
+    transform: scale(1.05); /* Escala menor para evitar "pular" demais */
 }
-.shadow-dark
-{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+
+.shadow-dark {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
-/* aside */ 
-.aside
-{
-    width: 270px;
+
+/* ====================================================================
+   ASIDE (Menu Lateral) - MOBILE-FIRST
+   ==================================================================== */
+.aside {
     background: var(--bg-black-100);
     position: fixed;
-    margin-left: -300px;
     top: 0;
-    padding: 20px;
-    height: 50%;
+    left: 0; /* Posição inicial para o transform funcionar */
+    width: 270px; /* Largura padrão do aside */
+    height: 100%;
     border-right: 1px solid var(--bg-black-50);
+    padding: 20px;
     display: flex;
+    flex-direction: column; /* Para organizar logo e nav */
     justify-content: center;
     align-items: center;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Esconde o aside por padrão em mobile */
 }
-/*======== aside toggle */
 
-    .aside {
-        right: 0;
-        left: 0px; 
-        position: block;
-        top: 0;
-        height: 100%;
-        transition: left 0.3s ease; /* Adiciona uma transição suave */
-    }
-    
-    .aside.open {
-        left: 0;
-    }
-    
-    /* Estilos para o botão de menu (opcional) */
-    .menu-toggle {
-      
-        cursor: pointer;
-    
-    }
+.aside.open {
+    transform: translateX(0); /* Mostra o aside */
+}
 
-.aside .logo
-{
+.aside .logo {
     position: absolute;
     top: 50px;
     font-size: 30px;
     text-transform: capitalize;
 }
-.aside .logo a 
-{
+
+.aside .logo a {
     color: var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;
@@ -226,76 +210,24 @@ ul
     letter-spacing: 5px;
     position: relative;
 }
-#menu-toggle .bar1
-{
-    
-    font-size: 1px;
-    letter-spacing: 5px;
-    position: fixed;
-    top: 200px;
-    content: '';
-    background: var(--skin-color);
-    display: block;
-    height: 10px;
-    width: 50px;
-    margin: 5px auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-#menu-toggle .bar2
-{
-    
-    font-size: 1px;
-    letter-spacing: 5px;
-    position: fixed;
-    top: 220px;
-    content: '';
-    background: var(--skin-color);
-    display: block;
-    height: 10px;
-    width: 50px;
-    margin: 5px auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-#menu-toggle .bar3
-{
-    
-    font-size: 1px;
-    letter-spacing: 5px;
-    position: fixed;
-    top: 240px;
-    content: '';
-    background: var(--skin-color);
-    display: block;
-    height: 10px;
-    width: 50px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
-    cursor: pointer;
+
+.aside .logo a span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 40px;
 }
 
-.aside .logo a span
-{
-    font-family: 'Clicker Script',cursive;
-    font-size: 40px;
- 
-}
-.aside .logo a::before 
-{
+.aside .logo a::before {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
     border-bottom: 5px solid var(--skin-color);
-    border-left: 5px solid   var(--skin-color);
+    border-left: 5px solid var(--skin-color);
     bottom: 0;
     left: 0;
-
-
 }
-.aside .logo a::after 
-{
+
+.aside .logo a::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -304,86 +236,78 @@ ul
     border-right: 5px solid var(--skin-color);
     top: 0;
     right: 0;
-
-
 }
-.aside .nav-toggler
-{
-    height: 40px;
-    width: 45px;
+
+/* ASIDE TOGGLER (botão hamburguer) */
+.aside-toggler {
+    height: 10px;
+    width: 30px;
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
     position: fixed;
-    left: 300px;
+    left: 20px; /* Posição à esquerda do viewport */
     top: 20px;
     border-radius: 5px;
     background: var(--bg-black-100);
-    display: none;
+    display: flex; /* Para centralizar o span */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-
+    z-index: 20; /* Acima do aside */
 }
-.aside .nav-toggler span
-{
+
+.aside-toggler span {
+    display: block; /* Cada span será uma barra */
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
-    display: inline-block;
+ 
     position: relative;
-}
-.aside .nav-toggler.open span
-{
-    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
-.aside .nav-toggler span::before
-{
+.aside-toggler span::before,
+.aside-toggler span::after {
     content: '';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
     position: absolute;
-    top: -6px;
+    width: 100%;
+    height: 100%;
+    background: var(--skin-color);
     left: 0;
 }
-.aside .nav-toggler.open span::before
-{
+
+.aside-toggler span::before {
+    top: -6px;
+}
+
+.aside-toggler span::after {
+    top: 6px;
+}
+
+/* Animação do hamburguer ao abrir */
+.aside-toggler.open span {
+    background-color: transparent; /* Esconde a barra do meio */
+}
+
+.aside-toggler.open span::before {
     transform: rotate(45deg);
     top: 0;
 }
-.aside .nav-toggler span::after
-{
-    content: '';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    position: absolute;
-    top: 6px;
-    left: 0;
-}
-.aside .nav-toggler.open span::after
-{
+
+.aside-toggler.open span::after {
     transform: rotate(-45deg);
     top: 0;
 }
-.duvida/* o que é isso */
-{
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-}
-.aside .nav 
-{
+
+.aside .nav {
     margin-top: 50px;
 }
-.aside .nav li 
-{
+
+.aside .nav li {
     margin-bottom: 20px;
     display: block;
 }
-.aside .nav li a 
-{
+
+.aside .nav li a {
     font-size: 16px;
     font-weight: 600;
     display: block;
@@ -391,218 +315,197 @@ ul
     color: var(--text-black-900);
     padding: 5px 15px;
 }
-.aside .nav li a.active
-{
+
+.aside .nav li a.active {
     color: var(--skin-color);
 }
-.aside .nav li a i 
-{
+
+.aside .nav li a i {
     margin-right: 15px;
 }
-/* HOME  */
-.home 
-{
+
+/* ====================================================================
+   HOME SECTION - MOBILE-FIRST
+   ==================================================================== */
+.home {
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
+    align-items: center; /* Centraliza verticalmente o conteúdo */
 }
-.home .container
-{
-    margin-left: 270px;
+
+.home .container {
+    margin: auto; /* Centraliza o container */
 }
-.home .home-info
-{
-    flex: 0 0 60%;
-    max-width: 60%;
+
+.home .home-info {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
 }
-h3.hello
-{
+
+h3.hello {
     font-size: 30px;
     margin: 15px 0;
 }
-h3.hello span
-{
-    font-family: 'Clicker Script',cursive;
+
+h3.hello span {
+    font-family: 'Clicker Script', cursive;
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
 }
-h3.my-specification 
-{
+
+h3.my-specification {
     font-size: 30px;
     margin: 15px 0;
 }
-.typing
-{   
+
+.typing {
     font-size: 30px;
     color: var(--skin-color);
 }
-.home-info p h6
-{
-    
+
+.home-info p h6 {
     margin-bottom: 70px;
     font-size: 40px;
     color: var(--text-black-900);
 }
 
-.home-info p 
-{
-    
+.home-info p {
     margin-bottom: 70px;
     font-size: 20px;
     color: var(--text-black-900);
 }
-.home-info a 
-{   
+
+.home-info a {
     font-size: 25px;
     color: black;
     line-height: 25px;
 }
-.home .home-img
-{
-    flex: 0 0 40%;
-    max-width: 90%;
-    text-align: center;
-    position: relative;
-     
+
+.home .home-img {
+    display: none; /* Esconde a imagem por padrão em mobile */
 }
-.home-img::after
-{
+
+.home-img::after,
+.home-img::before {
     content: '';
     position: absolute;
     height: 80px;
     width: 80px;
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -80px;
+    /* As bordas serão adicionadas em desktop */
 }
-.home-img::before
-{
-   content: '';
-   position: absolute;
-   height: 80px;
-   width: 80px;
-   border-top: 10px solid var(--skin-color);
-   border-left: 10px solid var(--skin-color);
-   left: -10px;
-   top: -10px;
-   
 
-}
-.home .home-img img
-{
-   /* margin: auto; */
-   width: 100%;
-   border-radius: 5px;
-   height: 500px;   
+.home .home-img img {
+    width: 100%;
+    border-radius: 5px;
+    height: 500px;
     object-fit: cover;
 }
-.ptbr 
-{   
+
+.ptbr {
     font-size: 20px;
-    color: var(--skin-color)
-  }
-/* About */ 
-.about .about-content
-{
+    color: var(--skin-color);
+}
+
+/* ====================================================================
+   ABOUT SECTION - MOBILE-FIRST
+   ==================================================================== */
+.about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.about .about-content .about-text
-{
+
+.about .about-content .about-text {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.about .about-content .about-text h3
-{
+
+.about .about-content .about-text h3 {
     font-size: 30px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
-.about .about-content .about-text h3 span
-{
+
+.about .about-content .about-text h3 span {
     color: var(--skin-color);
 }
-.about .about-content .about-text p
-{
+
+.about .about-content .about-text p {
     font-size: 20px;
     line-height: 25px;
     color: var(--text-black-700);
 }
-.about .about-content .personal-info
-{
-    flex: 0 0 60%;
-    max-width: 60%;
+
+.about .about-content .personal-info {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
     margin-top: 40px;
 }
-.about .about-content .personal-info .info-item
-{
-    
-    flex: 0 0 50%;
-    max-width: 50%;
-   
+
+.about .about-content .personal-info .info-item {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
+    text-align: center; /* Centraliza o texto em mobile */
 }
-.about .about-content .personal-info .info-item p
-{
-  
+
+.about .about-content .personal-info .info-item p {
     font-weight: 600;
     padding: 10px 0;
     font-size: 20px;
     color: var(--skin-color);
-    border-bottom: 1px solid var(--text-black-50); /*TEST*/
-    
+    border-bottom: 1px solid var(--text-black-50);
 }
-.about .about-content .personal-info .info-item p span  
-{
+
+.about .about-content .personal-info .info-item p span {
     font-weight: 400;
     color: var(--text-black-700);
     margin-left: 4px;
-    display: inline-block;
+    display: block; /* Quebra linha para mobile */
 }
-.about .about-content .personal-info .buttons
-{
-    margin-top: 60px;
-}
-.about .about-content .personal-info .buttons .btn
-{
 
+.about .about-content .personal-info .buttons {
+    margin-top: 60px;
+    text-align: center; /* Centraliza os botões em mobile */
+}
+
+.about .about-content .personal-info .buttons .btn {
     margin-top: 10px;
 }
-.about .about-content .skills
-{
-    flex: 0 0 40%;
-    max-width: 40%;
+
+.about .about-content .skills {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
     margin-top: 40px;
 }
-.about .about-content .skills .skill-item
-{
+
+.about .about-content .skills .skill-item {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.about .about-content .skills .skill-item h5 
-{
+
+.about .about-content .skills .skill-item h5 {
     line-height: 40px;
     font-weight: 600;
     font-size: 16px;
     color: var(--text-black-900);
     text-transform: capitalize;
 }
-.about .about-content .skills .skill-item .progress
-{
+
+.about .about-content .skills .skill-item .progress {
     background-color: rgb(236, 226, 248);
     height: 7px;
     border-radius: 4px;
     width: 100%;
     position: relative;
 }
-.about .about-content .skills .skill-item
-{
+
+.about .about-content .skills .skill-item {
     margin-bottom: 25px;
 }
-.about .about-content .skills .skill-item .progress-in
-{
+
+.about .about-content .skills .skill-item .progress-in {
     position: absolute;
     left: 0;
     top: 0;
@@ -610,8 +513,8 @@ h3.my-specification
     border-radius: 4px;
     background-color: var(--skin-color);
 }
-.about .about-content .skills .skill-item .skill-percent
-{
+
+.about .about-content .skills .skill-item .skill-percent {
     position: absolute;
     right: 0;
     color: var(--text-black-900);
@@ -619,28 +522,27 @@ h3.my-specification
     font-weight: 400;
     line-height: 40px;
 }
+
 .about .about-content .education,
-.about .about-content .experience
-{
-    flex: 0 0 50%;
-    max-width: 50%;
+.about .about-content .experience {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
     margin-top: 30px;
 }
-.about .about-content h3.title
-{
+
+.about .about-content h3.title {
     font-size: 24px;
     margin-bottom: 30px;
     font-weight: 700;
     color: var(--text-black-900);
 }
-.about ,.about-content .timeline-box
-{
+
+.about .about-content .timeline-box { /* Removido .about para especificidade */
     flex: 0 0 100%;
     max-width: 100%;
- 
 }
-.about .about-content .timeline
-{
+
+.about .about-content .timeline {
     background-color: var(--bg-black-100);
     padding: 30px 15px;
     border: 1px solid var(--bg-black-50);
@@ -648,18 +550,18 @@ h3.my-specification
     width: 100%;
     position: relative;
 }
-.about .about-content .timeline .timeline-item
-{
+
+.about .about-content .timeline .timeline-item {
     position: relative;
     padding-left: 37px;
     padding-bottom: 50px;
 }
-.about .about-content .timeline .timeline-item:last-child
-{
+
+.about .about-content .timeline .timeline-item:last-child {
     padding-bottom: 0;
 }
-.about .about-content .timeline .timeline-item::before
-{
+
+.about .about-content .timeline .timeline-item::before {
     content: '';
     width: 1px;
     position: absolute;
@@ -668,8 +570,8 @@ h3.my-specification
     top: 0;
     background-color: var(--skin-color);
 }
-.about .about-content .timeline .circle-dot
-{
+
+.about .about-content .timeline .circle-dot {
     position: absolute;
     left: 0;
     top: 0;
@@ -679,58 +581,82 @@ h3.my-specification
     background-color: var(--skin-color);
     font-size: 20px;
 }
-.about .about-content .timeline .timeline-date
-{
+
+.about .about-content .timeline .timeline-date {
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 12px;
     color: var(--text-black-900);
 }
-.about .about-content .timeline .timeline-date .fa
-{ 
+
+.about .about-content .timeline .timeline-date .fa {
     margin-right: 5px;
 }
-.about .about-content .timeline .timeline-title
-{
+
+.about .about-content .timeline .timeline-title {
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 15px;
     text-transform: capitalize;
     color: var(--text-black-900);
 }
-.about .about-content .timeline .timeline-text
-{
+
+.about .about-content .timeline .timeline-text {
     line-height: 25px;
     font-size: 16px;
     text-align: justify;
     color: var(--text-black-700);
 }
-/* Service */
-.service .container
-{
+
+/* ====================================================================
+   SERVICE SECTION - MOBILE-FIRST (SEM ALTERAÇÕES SIGNIFICATIVAS NESTA VERSÃO)
+   ==================================================================== */
+.service .container {
     padding-bottom: 40px;
 }
-.service .service-item
-{
+
+.service .service-item {
     margin-bottom: 30px;
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
 }
-.service .service-item .service-item-inner 
-{
+
+.service .service-item .service-item-inner {
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     padding: 30px 15px;
     text-align: center;
+    overflow: hidden; /* Importante para o brilho */
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
-.service .service-item .service-item-inner:hover
-{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+
+.service .service-item .service-item-inner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-.service .service-item .service-item-inner .icon
-{
+
+.service .service-item .service-item-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.service .service-item .service-item-inner:hover::before {
+    opacity: 0.2;
+}
+
+.service .service-item .service-item-inner .icon {
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -739,297 +665,376 @@ h3.my-specification
     text-align: center;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon .fa 
-{
+
+.service .service-item .service-item-inner .icon .fa {
     font-size: 30px;
     line-height: 60px;
     color: var(--skin-color);
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner:hover .icon
-{
+
+.service .service-item .service-item-inner:hover .icon {
     background-color: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fa
-{
+
+.service .service-item .service-item-inner:hover .icon .fa {
     font-size: 20px;
     color: #ffffff;
 }
-.service .service-item .service-item-inner h4
-{
+
+.service .service-item .service-item-inner h4 {
     font-size: 25px;
     margin-bottom: 15px;
     color: var(--text-black-900);
     font-weight: 700;
     text-transform: capitalize;
 }
-.service .service-item .service-item-inner p 
-{
+
+.service .service-item .service-item-inner p {
     font-size: 20px;
     color: var(--text-black-700);
     line-height: 25px;
 }
-/* portfolio */ 
-.portfolio .container
-{
+
+/* ====================================================================
+   PORTFOLIO SECTION - MOBILE-FIRST (COM ALTERAÇÕES PARA OVERLAY)
+   ==================================================================== */
+.portfolio .container {
     padding-bottom: 40px;
 }
-.portfolio .portfolio-heading 
-{
+
+.portfolio .portfolio-heading {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
 }
-.portfolio .portfolio-heading h2
-{
+
+.portfolio .portfolio-heading h2 {
     text-align: center;
-    font-size: 0px;
-    color: var(--skin-color);
+    /* Font-size: 0px pode esconder o título se não for o objetivo. */
+    /* Se o objetivo é que o título 'Project Examples:' apareça, ajuste para um valor maior. */
+    font-size: 28px; /* Ajustei para um tamanho visível */
+    color: var(--skin-color); /* Usando a variável de cor principal */
     font-weight: 500;
 }
-.portfolio .portfolio-item
-{
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+
+.portfolio .portfolio-item {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
     margin-bottom: 30px;
 }
-.portfolio .portfolio-item span
-{
+
+/* REMOVIDO: .portfolio .portfolio-item span, pois agora temos .portfolio-text h4 e p */
+ .portfolio .portfolio-item span {
     font-size: 20px;
     color: var(--text-black-900);
     font-weight: 700;
-
     margin-bottom: 10px;
-}
-.portfolio .portfolio-item-inner
-{
-    border: 6px solid var(--bg-black-100);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
+} 
 
-}
-.portfolio .portfolio-item-inner .portfolio-img img 
-{
-    width: 100%;
-    display: block;
-}
-/* contact*/
-.contact-title
-{
+.portfolio .portfolio-item-inner {
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    overflow: hidden; /* CRÍTICO: Para esconder o overflow do zoom da imagem e do texto inicial */
+    cursor: pointer;
+    position: relative; /* CRÍTICO: Para posicionar o overlay .portfolio-text */
+    z-index: 1; 
+}/* Garante que o conteúdo
+
+/* ====================================================================
+   CONTACT SECTION - MOBILE-FIRST
+   ==================================================================== */
+.contact-title {
     color: var(--skin-color);
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
 }
-.contact-sub-title
-{
+
+.contact-sub-title {
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
     margin-bottom: 60px;
 }
-.contact .contact-info-item
-{
-    flex: 0 0 25%;
-    max-width: 25%;
+
+.contact .contact-info-item {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
     text-align: center;
-    margin-bottom: 60PX;
+    margin-bottom: 30px; /* Reduzido para mobile */
 }
-.contact .contact-info-item .icon
-{
+
+.contact .contact-info-item .icon {
     display: inline-block;
 }
-.contact .contact-info-item .icon .fa
-{
-    font-size:30px;
+
+.contact .contact-info-item .icon .fa {
+    font-size: 30px;
     color: var(--skin-color);
 }
-.contact .contact-info-item h4 
-{
+
+.contact .contact-info-item h4 {
     font-size: 18px;
     font-weight: 700;
     color: var(--text-black-900);
     text-transform: capitalize;
     margin: 15px 0 5px;
 }
-.contact .contact-info-item p
-{
+
+.contact .contact-info-item p {
     font-size: 20px;
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
 }
-.contact .contact-info-item a 
-{
+
+.contact .contact-info-item a {
     font-size: 30px;
+}
 
-}
-.contact .contact-form  
-{
+.contact .contact-form {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.contact .contact-form  .col-6
-{
-    flex: 0 0 50%;
-    max-width: 50%;
+
+.contact .contact-form .col-6 {
+    flex: 0 0 100%; /* Padrão 100% para mobile */
+    max-width: 100%;
 }
-.contact .contact-form  .col-12
-{
+
+.contact .contact-form .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
-   
 }
-.contact .contact-form  .form-item
-{
-   margin-bottom: 30px;
-} 
-.contact .contact-form  .form-item .form-control
-{
-     width: 100%;
-     height: 50x;
-     border-radius: 25px; 
-     background: var(--bg-black-100);
-     border: 1px solid var(--bg-black-50);
-     padding: 10px 25px;
-     font-size: 16px;
-     color: var(--text-black-700);
-     transition: all 0.3s ease;
+
+.contact .contact-form .form-item {
+    margin-bottom: 30px;
 }
-.contact .contact-form  .form-item .form-control:focus
-{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+
+.contact .contact-form .form-item .form-control {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    padding: 10px 25px;
+    font-size: 16px;
+    color: var(--text-black-700);
+    transition: all 0.3s ease;
 }
-.contact .contact-form  .form-item .-textarea-form-control
-{
+
+.contact .contact-form .form-item .form-control:focus {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.contact .contact-form .form-item .-textarea-form-control {
     height: 140px;
-
 }
-.contact .contact-form  .btn
-{
+
+.contact .contact-form .btn {
     height: 50px;
     padding: 0 50px;
 }
-/* ======================================== */
-.sociais-title
-{
+
+/* ====================================================================
+   SOCIALS
+   ==================================================================== */
+.sociais-title {
     color: var(--skin-color);
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
 }
 
+.logosocias {
+    display: flex; /* Ativa o flexbox para o contêiner */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    margin-top: 30px; /* Espaço acima dos links */
+    /* Remove text-align: center; daqui, pois ele não é necessário no contêiner flex */
+}
+
+.logosocias a {
+    display: flex; /* Faz cada link ser um contêiner flexível */
+    flex-direction: column; /* Organiza ícone e texto verticalmente */
+    align-items: center; /* Centraliza ícone e texto horizontalmente dentro do link */
+    color: var(--text-black-900); /* Cor padrão do texto */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Transição para hover */
+    padding: 10px 15px; /* Padding para a área clicável */
+    border-radius: 5px; /* Leve arredondamento */
+    /* Remove background-color: var(--skin-color); e border-radius: 50%; daqui,
+       pois você tem o ícone e o texto separadamente, e eles não devem ser um círculo de fundo.
+       Se você quer o fundo colorido no ícone, ele vai no .bx ou <span>. */
+}
+
+.logosocias a:hover {
+    color: var(--skin-color); /* Muda a cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Faz o item inteiro crescer um pouco */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave no hover */
+}
+
+.logosocias a span { /* Para os spans que contêm os Boxicons (bx) */
+    display: flex; /* Flexbox para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+    height: 48px; /* Tamanho do círculo do ícone */
+    width: 48px; /* Tamanho do círculo do ícone */
+    background-color: var(--skin-color); /* Cor de fundo do círculo */
+    border-radius: 50%; /* Faz o círculo */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+    color: #fffafa; /* Cor do ícone dentro do círculo */
+    transition: all 0.3s ease;
+}
+
+.logosocias a:hover span {
+    background-color: var(--text-black-900); /* Muda a cor do fundo do círculo no hover */
+    color: var(--skin-color); /* Mantém a cor do ícone ou muda se quiser */
+}
+
+.logosocias a i { /* Para os ícones Boxicons diretos (se não estiverem em span) */
+    font-size: 30px; /* Tamanho do ícone Boxicons */
+    line-height: 48px; /* Para centralizar verticalmente se o 'a' não for flex */
+    /* Se o 'a' é flex-direction: column e align-items: center, line-height não é tão crítico aqui */
+}
+
+.bx {
+    font-size: 24px;
+}
+/* No seu style.css, adicione estas regras: */
 
 .logosocias {
-    display: flex; 
-    justify-content: center; 
-    margin-top: 20px; 
-  }
-  
-  
-  .logosocias a {
-    display: inline-block; 
-    width: 48px; 
-    height: 48px; 
-    background-color: var(--skin-color); 
-    border-radius: 50%; 
-    margin: 0 10px; 
-    text-align: center; 
-    line-height: 48px; 
-    color: #fffafa; 
-    transition: all 0.3s ease-in-out; 
-  }
-  
-  .logosocias a:hover {
-    background-color: #ddd; 
-    transform: scale(1.1); 
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
-  }
-  
- 
-  .bx {
-    font-size: 24px; 
-  }
+    display: flex; /* Ativa o flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha quando não há espaço */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Adiciona um espaço entre os itens */
+    margin-top: 30px; /* Adiciona um pouco de espaço acima dos links */
+    text-align: center; /* Centraliza o texto dentro dos links */
+}
 
-@media (min-width:1199px)
-{
-    .section .container 
-    {
-        padding-top: 70px;
-        margin-left: 270px;
-        padding-bottom: 70px;
+.logosocias a {
+    display: flex; /* Faz cada link ser um contêiner flexível */
+    flex-direction: column; /* Organiza ícone e texto verticalmente */
+    align-items: center; /* Centraliza o ícone e o texto horizontalmente dentro do link */
+    color: var(--text-black-900); /* Use a cor do seu tema */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px; /* Adiciona um pouco de padding para área de clique */
+    border-radius: 5px; /* Leve arredondamento */
+}
+
+.logosocias a:hover {
+    color: var(--skin-color); /* Muda a cor ao passar o mouse */
+}
+
+.logosocias a span {
+    display: block; /* Garante que o span com o ícone seja um bloco */
+    font-size: 30px; /* Ajuste o tamanho do ícone */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+}
+
+.logosocias a i {
+    font-size: 30px; /* Garante que o ícone do Boxicons tenha um tamanho adequado */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+}
+
+/* No style-switcher.css */
+
+.aside-toggler {
+    /* ... outras propriedades ... */
+    transition: all 0.3s ease; /* Garante transição para opacidade/visibilidade */
+    opacity: 1; /* Por padrão visível */
+    visibility: visible; /* Por padrão visível */
+}
+
+.style-switcher {
+    /* ... outras propriedades ... */
+    transition: all 0.3s ease; /* Garante transição para opacidade/visibilidade */
+    opacity: 1; /* Por padrão visível */
+    visibility: visible; /* Por padrão visível */
+}
+
+/* Classes para esconder os elementos */
+.hide-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Impede cliques quando invisível */
+}
+
+
+/* ====================================================================
+   MEDIA QUERIES (Mobile-First)
+   Aplicam-se a partir da largura mínima especificada
+   ==================================================================== */
+
+/* Pequenos Tablets e Landscape Phones (ex: 576px e acima) */
+@media (min-width: 576px) {
+    /* Ajustes específicos para esta faixa, se necessário */
+    .contact .contact-form .col-6 {
+        flex: 0 0 50%; /* Volta a ser 2 colunas para formulário */
+        max-width: 50%;
     }
-    .aside
-    {   width: 200px;
-        height: 50;
-        margin-left: -300px;
-        left: 270px;
-        padding: 20px;  
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 50%; /* 2 colunas para serviços e portfólio */
+        max-width: 50%;
     }
-    .aside.open
-    {
-        left: 0;
+}
+
+/* Tablets (ex: 768px e acima) */
+@media (min-width: 768px) {
+    .about .about-content .personal-info {
+        flex: 0 0 60%;
+        max-width: 60%;
     }
-    .aside .nav-toggler
-    {
-        display: fixed;
-        left: -20px;
+    .about .about-content .personal-info .info-item {
+        flex: 0 0 50%; /* 2 colunas para info-item */
+        max-width: 50%;
+        text-align: left; /* Alinha à esquerda em tablets */
     }
-    .aside .nav-toggler.open 
-    {
-        left: 300px;
+    .about .about-content .personal-info .info-item p span {
+        display: inline-block; /* Volta para inline */
+        margin-left: 4px;
     }
-    .section
-    {
-        left: 0;
+    .about .about-content .personal-info .buttons {
+        text-align: left; /* Alinha os botões à esquerda */
     }
-    .section.open 
-    {
-        left: 270px;
+    .about .about-content .skills {
+        flex: 0 0 40%;
+        max-width: 40%;
     }
-   .about .about-content .personal-info .info-item p span
-    {
-        display: block;
-        margin-left: 0;
-    }
-}    
-@media (max-width:991px)
-{
-    .contact .contact-info-item,
-    .portfolio .portfolio-item,
-    .service .service-item
-    {
+    .about .about-content .education,
+    .about .about-content .experience {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    
-    .home .home-info
-    {
-        flex: 0 0 100%;
-        max-width: 100%;
-    } 
-    .home .home-img
-    {
-        display: none;
+    .service .service-item {
+        flex: 0 0 33.33%; /* 3 colunas para serviços */
+        max-width: 33.33%;
     }
-
+    .portfolio .portfolio-item {
+        flex: 0 0 33.33%; /* 3 colunas para portfólio */
+        max-width: 33.33%;
+    }
+    .contact .contact-info-item {
+        flex: 0 0 50%; /* 2 colunas para contato */
+        max-width: 50%;
+    }
 }
 
-@media (max-width:776px)
-{
-
-    .contact .contact-form .col-6,
-    .contact .contact-info-item,
-    .portfolio .portfolio-item,
-    .service .service-item,
-    .about .about-content .experience,
-    .about .about-content .education, 
-    .about .about-content .skill,
-    .about .about-content .personal-info
-
-    {
-        flex: 0 0 100%;
-        max-width: 100%;
+/* Desktops (ex: 992px e acima) */
+@media (min-width: 992px) {
+    .section {
+        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
     }
-} 
+
+    .home .container {
+        margin-left: 270px; /* Desloca o container da home */
+    }}
+    

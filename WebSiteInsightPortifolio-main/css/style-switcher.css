@@ -12,6 +12,88 @@
     transition: all 0.3s ease;
     transform: translateX(100%);
 }
+.aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px; /* Ajuste a largura conforme necessário */
+    height: 100%;
+    background: var(--bg-black-100); /* Use suas variáveis de cor */
+    border-right: 1px solid var(--bg-black-50);
+    padding: 30px;
+    z-index: 10; /* Garante que fique acima do conteúdo */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%); /* Esconde inicialmente em telas menores */
+}
+
+.aside.open {
+    transform: translateX(0); /* Mostra o aside */
+}
+
+.aside-toggler {
+    /* Estilos para o botão hamburguer */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block; /* Garante que apareça em telas menores */
+}
+
+/* Estilos para as barras do hamburguer */
+.aside-toggler span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--text-black-900); /* Sua cor de texto */
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.aside-toggler, .aside-toggler.open span {
+
+    /* Estilos para as barras do hamburguer quando o menu está aberto */
+    background-color:var(--skin-color); /* Sua cor de texto */
+   
+}
+.aside-toggler.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotaciona a primeira barra */
+}
+.aside-toggler.open span:nth-child(2) {
+    opacity: 0; /* Esconde a segunda barra */
+}
+.aside-toggler.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotaciona a terceira barra */
+}
+
+/* Oculta o toggler em telas maiores, se desejar */
+@media (min-width: 1463px) { /* Ajuste o breakpoint conforme necessário */
+    .aside-toggler {
+        display: none;
+    }
+    .aside {
+        transform: translateX(0); /* Mostra o aside em telas maiores */
+    }
+    .section {
+        padding-left: 300px; /* Isso dá espaço para o aside fixo */
+    }
+    .aside {
+        width: 300px; /* Garante a largura do aside em desktop */
+        transform: translateX(0); /* Garante que o aside esteja visível */
+    }
+    /* Opcional: Para mobile, se os itens ficarem muito grandes, você pode ajustar */
+@media (max-width: 575px) {
+    .logosocias a {
+        font-size: 14px; /* Diminui a fonte do texto para telas muito pequenas */
+        padding: 8px;
+    }
+    .logosocias a span,
+    .logosocias a i {
+        font-size: 25px; /* Diminui o ícone para telas muito pequenas */
+    }
+}
+}
  .open
 {
     transform: translateX(-25px);
@@ -39,11 +121,13 @@
 }
 .style-switcher .style-switcher-toggler
 {
+    transform: translateX(50%);
     top: 0;
 
 }
 .style-switcher .day-night 
 {
+    transform: translateX(50%);
     top: 55px; 
 }
 .style-switcher h4
