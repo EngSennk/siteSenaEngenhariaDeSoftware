@@ -339,8 +339,8 @@ ul {
 }
 
 .home .home-info {
-    flex: 0 0 100%; /* Padrão 100% para mobile */
-    max-width: 100%;
+    flex: 0 0 50%; /* Padrão 100% para mobile */
+    max-width: 60%;
 }
 
 h3.hello {
@@ -384,7 +384,10 @@ h3.my-specification {
 }
 
 .home .home-img {
-    display: none; /* Esconde a imagem por padrão em mobile */
+    flex: 0 0 40%; /* Ocupa 40% da largura */
+    max-width: 40%; /* Garante a largura máxima */
+    padding-left: 30px; /* Adiciona um respiro entre o texto e a imagem */
+    
 }
 
 .home-img::after,
@@ -397,9 +400,9 @@ h3.my-specification {
 }
 
 .home .home-img img {
-    width: 100%;
+     width: 100%; /* A imagem ocupa 100% do seu container (.home-img) */
     border-radius: 5px;
-    height: 500px;
+    height: auto; /* Deixe a altura automática para não distorcer */
     object-fit: cover;
 }
 

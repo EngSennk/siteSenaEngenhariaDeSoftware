@@ -70,7 +70,7 @@
 /* Oculta o toggler em telas maiores, se desejar */
 @media (min-width: 1463px) { /* Ajuste o breakpoint conforme necessário */
     .aside-toggler {
-        display: none;
+        display: none[];
     }
     .aside {
         transform: translateX(0); /* Mostra o aside em telas maiores */
@@ -82,8 +82,16 @@
         width: 300px; /* Garante a largura do aside em desktop */
         transform: translateX(0); /* Garante que o aside esteja visível */
     }
+    .home  .container 
+    {
+        margin:100px;
+    }
+    .
+
+
+    }
     /* Opcional: Para mobile, se os itens ficarem muito grandes, você pode ajustar */
-@media (max-width: 575px) {
+    @media (max-width: 575px) {
     .logosocias a {
         font-size: 14px; /* Diminui a fonte do texto para telas muito pequenas */
         padding: 8px;
@@ -93,7 +101,7 @@
         font-size: 25px; /* Diminui o ícone para telas muito pequenas */
     }
 }
-}
+
  .open
 {
     transform: translateX(-25px);
