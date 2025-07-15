@@ -27,6 +27,7 @@ body {
     font-family: 'Poppins', sans-serif; /* Corrigido: vírgula entre as fontes */
     overflow-y: scroll;
 }
+/* Troca de Linguagem Padrão do Site*/
 
 * {
     margin: 0;
@@ -100,6 +101,49 @@ ul {
     padding-top: 60px;
     padding-bottom: 70px;
 }
+/* --- Language Switcher Styles --- */
+.language-switcher {
+    position: absolute; /* Posição absoluta dentro do aside */
+    top: 20px; /* Alinhe com o nav-toggler, mas à direita dele */
+    left: 80px; /* Ajuste essa margem para posicionar corretamente */
+    display: flex;
+    gap: 10px; /* Espaço entre os botões de bandeira */
+    z-index: 21; /* Acima do nav-toggler */
+}
+
+.language-switcher .lang-btn {
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Tamanho fixo para as bandeiras */
+    height: 30px; /* Altura fixa */
+    overflow: hidden; /* Garante que a imagem não saia do botão */
+}
+
+.language-switcher .lang-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre o espaço sem distorcer */
+    border-radius: 3px; /* Borda levemente arredondada para a imagem */
+}
+
+.language-switcher .lang-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.language-switcher .lang-btn.active-lang {
+    border-color: var(--skin-color); /* Destaca a bandeira ativa */
+    box-shadow: 0 0 15px rgba(var(--skin-color-rgb), 0.3); /* Sombra mais forte */
+}
+
+
 
 /* ====================================================================
    SECTION TITLE

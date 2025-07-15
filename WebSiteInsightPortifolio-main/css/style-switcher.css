@@ -86,10 +86,10 @@
     {
         margin:100px;
     }
-    .
+    
 
 
-    }
+    
     /* Opcional: Para mobile, se os itens ficarem muito grandes, você pode ajustar */
     @media (max-width: 575px) {
     .logosocias a {
@@ -179,5 +179,4 @@ background-color: #b2b2b2b2;
 .style-switcher .color-5
 {
     background: #f021b2;
-}
-
+}}

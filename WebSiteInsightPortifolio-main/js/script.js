@@ -158,16 +158,21 @@ if (form && mensagemSucesso) { // Garante que os elementos existam
         lastScrollY = window.scrollY; // Atualiza a última posição de rolagem
     }
 
-    // Adiciona o event listener para o scroll
-    window.addEventListener("scroll", handleScrollVisibility);
+    // // Adiciona o event listener para o scroll
+    // window.addEventListener("scroll", handleScrollVisibility);
 
-    // Adiciona um listener para o redimensionamento da janela para garantir que a visibilidade seja ajustada
-    window.addEventListener("resize", handleScrollVisibility);
+    // // Adiciona um listener para o redimensionamento da janela para garantir que a visibilidade seja ajustada
+    // window.addEventListener("resize", handleScrollVisibility);
 
-    // Chama a função uma vez ao carregar a página para definir o estado inicial
-    window.addEventListener("load", function() {
-        handleScrollVisibility(); // Garante o estado inicial baseado na largura da tela
-        // ... (seu código existente para ativar a seção correta na carga da página) ...
-    });
+    // // Inicializa o estado de visibilidade ao carregar a página
+    // window.addEventListener("load", handleScrollVisibility);
+
+    // // Ativar a seção "home" por padrão ao carregar a página
+    // window.addEventListener("load", function() {
+    //     const homeLink = document.querySelector(".nav li a[href='#home']");
+    //     if (homeLink) {
+    //         homeLink.click(); // Simula um clique para ativar a seção home e o link correspondente
+    //     }
+    // });
 
 })(); // Fim da IIFE
