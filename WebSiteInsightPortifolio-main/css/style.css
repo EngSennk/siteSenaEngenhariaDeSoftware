@@ -138,11 +138,11 @@ ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.language-switcher .lang-btn.active-lang {
+/* .language-switcher .lang-btn.active-lang {
     border-color: var(--skin-color); /* Destaca a bandeira ativa */
     box-shadow: 0 0 15px rgba(var(--skin-color-rgb), 0.3); /* Sombra mais forte */
-}
 
+ */
 
 
 /* ====================================================================
@@ -284,8 +284,8 @@ ul {
 
 /* ASIDE TOGGLER (botão hamburguer) */
 .aside-toggler {
-    height: 10px;
-    width: 30px;
+    height: 1px;
+    width: 1px;
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
     position: fixed;
@@ -374,86 +374,86 @@ ul {
 .home {
     min-height: 100vh;
     display: flex;
-    color: var(--text-black-900);
     align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo da seção */
+    color: var(--text-black-900);
+    padding: 0 15px; /* Adiciona um padding nas laterais para evitar que o conteúdo cole nas bordas */
 }
 
 .home .container {
-    margin: auto; /* Centraliza o container */
+    max-width: 1200px; /* Defina uma largura máxima para o container em telas grandes */
+    width: 100%; /* Ocupa 100% da largura do pai */
+    padding: 0 15px; /* Padding interno para o container, para evitar bordas coladas */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.home .row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    flex-direction: column; /* Por padrão, empilha os itens verticalmente (mobile-first) */
+ 
 }
 
 .home .home-info {
-    flex: 0 0 50%; /* Padrão 100% para mobile */
-    max-width: 60%;
+    
+    max-width: 30%; 
+    box-sizing: border-box;
+   
 }
 
 h3.hello {
-    font-size: 30px;
-    margin: 15px 0;
+    font-size: clamp(24px, 6vw, 45px); /* Ajuste os tamanhos de fonte para serem responsivos */
+    margin: 10px 0;
 }
 
-h3.hello span {
+h3.hello span.name {
     font-family: 'Clicker Script', cursive;
-    font-size: 30px;
+    font-size: clamp(28px, 7vw, 50px);
     font-weight: 700;
     color: var(--skin-color);
 }
 
 h3.my-specification {
-    font-size: 30px;
-    margin: 15px 0;
+    font-size: clamp(24px, 5.5vw, 45px);
+    margin: 10px 0;
 }
 
 .typing {
-    font-size: 30px;
+    font-size: clamp(24px, 5.5vw, 45px);
     color: var(--skin-color);
-}
-
-.home-info p h6 {
-    margin-bottom: 70px;
-    font-size: 40px;
-    color: var(--text-black-900);
 }
 
 .home-info p {
-    margin-bottom: 70px;
-    font-size: 20px;
+    margin-bottom: 15px; /* Ajuste o espaçamento entre parágrafos */
+    font-size: clamp(16px, 3.5vw, 22px); /* Tamanho de fonte responsivo */
+    line-height: 1.5; /* Melhora a legibilidade */
     color: var(--text-black-900);
 }
 
-.home-info a {
-    font-size: 25px;
-    color: black;
-    line-height: 25px;
+.ptbr {
+    font-size: clamp(16px, 4vw, 25px);
+    color: var(--skin-color);
+    margin-top: 20px;
 }
 
 .home .home-img {
-    flex: 0 0 40%; /* Ocupa 40% da largura */
-    max-width: 40%; /* Garante a largura máxima */
-    padding-left: 30px; /* Adiciona um respiro entre o texto e a imagem */
-    
-}
-
-.home-img::after,
-.home-img::before {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    /* As bordas serão adicionadas em desktop */
+   
+    max-width: 60%; 
+      
 }
 
 .home .home-img img {
-     width: 100%; /* A imagem ocupa 100% do seu container (.home-img) */
-    border-radius: 5px;
-    height: auto; /* Deixe a altura automática para não distorcer */
-    object-fit: cover;
+    width: 60%; 
+    margin-left: 650px;
+    
+    
+
 }
 
-.ptbr {
-    font-size: 20px;
-    color: var(--skin-color);
-}
+
+
+
+
 
 /* ====================================================================
    ABOUT SECTION - MOBILE-FIRST
@@ -882,9 +882,9 @@ h3.my-specification {
 
 @media (min-width: 992px) { /* Para telas maiores que 992px (desktops maiores) */
     .service .service-item,
-    .portfolio .portfolio-item {
-        flex: 0 0 33.33%; /* 3 colunas */
-        max-width: 33.33%;
+    .portfolio .portfolio-item .home-img::after {
+        flex: 0 0 33.33%; /*3 colunas */
+      
     }
 }
 /* ====================================================================
@@ -1119,68 +1119,50 @@ h3.my-specification {
    Aplicam-se a partir da largura mínima especificada
    ==================================================================== */
 
-/* Pequenos Tablets e Landscape Phones (ex: 576px e acima) */
-@media (min-width: 576px) {
-    /* Ajustes específicos para esta faixa, se necessário */
-    .contact .contact-form .col-6 {
-        flex: 0 0 50%; /* Volta a ser 2 colunas para formulário */
-        max-width: 50%;
-    }
-    .service .service-item,
-    .portfolio .portfolio-item {
-        flex: 0 0 50%; /* 2 colunas para serviços e portfólio */
-        max-width: 50%;
-    }
-}
-
-/* Tablets (ex: 768px e acima) */
 @media (min-width: 768px) {
-    .about .about-content .personal-info {
-        flex: 0 0 60%;
-        max-width: 60%;
+    .home .row {
+        flex-direction: row; /* Volta a organizar os itens em linha */
+        justify-content: center; /* Centraliza os itens na linha */
     }
-    .about .about-content .personal-info .info-item {
-        flex: 0 0 50%; /* 2 colunas para info-item */
-        max-width: 50%;
-        text-align: left; /* Alinha à esquerda em tablets */
+
+    .home .home-info {
+     
+        max-width: 30%; /* Define a largura máxima */
+        text-align: left; /* Alinha o texto à esquerda novamente */
     }
-    .about .about-content .personal-info .info-item p span {
-        display: inline-block; /* Volta para inline */
-        margin-left: 4px;
+
+    .home .home-img {
+        position: absolute;
+        max-width: 70%; /* Define a largura máxima */
+        margin-top: 0; /* Remove o margin-top */
     }
-    .about .about-content .personal-info .buttons {
-        text-align: left; /* Alinha os botões à esquerda */
+
+    .home .home-img img {
+        width: 100%; /* Imagem pode ocupar 100% do seu contêiner */
+        max-width: 400px; /* Ou um valor maior, se preferir */
     }
-    .about .about-content .skills {
-        flex: 0 0 40%;
-        max-width: 40%;
-    }
-    .about .about-content .education,
-    .about .about-content .experience {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .service .service-item {
-        flex: 0 0 33.33%; /* 3 colunas para serviços */
-        max-width: 33.33%;
-    }
-    .portfolio .portfolio-item {
-        flex: 0 0 33.33%; /* 3 colunas para portfólio */
-        max-width: 33.33%;
-    }
-    .contact .contact-info-item {
-        flex: 0 0 50%; /* 2 colunas para contato */
-        max-width: 50%;
-    }
+
+   
+  
 }
 
-/* Desktops (ex: 992px e acima) */
+/* --- Media Query para Desktop (com padding para o aside) --- */
 @media (min-width: 992px) {
     .section {
         padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
     }
 
     .home .container {
-        margin-left: 270px; /* Desloca o container da home */
-    }}
-    
+        /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
+           mas geralmente o padding-left do .section já é suficiente. */
+        padding-left: 0; /* Reinicia o padding do container se o section já tiver */
+        padding-right: 0;
+    }
+    /* Ajustes finos de largura se necessário para maior contraste no desktop */
+    .home .home-info {
+        max-width: 55%;
+    }
+    .home .home-img {
+        max-width: 45%;
+    }
+}
