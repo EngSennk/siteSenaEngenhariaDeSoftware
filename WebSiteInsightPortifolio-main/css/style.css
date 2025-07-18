@@ -192,7 +192,9 @@ ul {
     margin-right: -15px;
     position: relative;
 }
-
+.web {
+    cursor: pointer;
+}
 .btn {
     font-size: 16px;
     font-weight: 500;
@@ -1024,7 +1026,9 @@ h3.my-specification {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave no hover */
 }
 
-.logosocias a span { /* Para os spans que contêm os Boxicons (bx) */
+.logosocias a span 
+ { /* Para os spans que contêm os Boxicons (bx) */
+   
     display: flex; /* Flexbox para centralizar o ícone */
     justify-content: center;
     align-items: center;
@@ -1036,7 +1040,26 @@ h3.my-specification {
     color: #fffafa; /* Cor do ícone dentro do círculo */
     transition: all 0.3s ease;
 }
-
+.sociais{
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%); /* Brilho radial */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Garante que o brilho não interfira com eventos do mouse */
+    z-index: -1; /* Coloca o brilho atrás do conteúdo */
+}
+.sociais-medias-section {
+    /* seus estilos para a seção inteira, se houver */
+    display: block; /* Garanta que ela não está oculta por padrão */
+    /* ... outros estilos ... */
+    margin-left: 500px;
+}
 .logosocias a:hover span {
     background-color: var(--text-black-900); /* Muda a cor do fundo do círculo no hover */
     color: var(--skin-color); /* Mantém a cor do ícone ou muda se quiser */
