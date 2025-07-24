@@ -1,5 +1,5 @@
 // ============================= toggle style switcher ==================
-const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
+const styleSwitcherToggle = document.querySelector(".style-switcher-toggler")
 if (styleSwitcherToggle) { // Garante que o elemento existe antes de adicionar listener
     styleSwitcherToggle.addEventListener("click", () => {
         document.querySelector(".style-switcher").classList.toggle("open");

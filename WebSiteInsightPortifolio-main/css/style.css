@@ -137,24 +137,27 @@ ul {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+ .language-switcher .lang-btn.active-lang {
+    box-shadow:  0 15px rgba(var(--skin-color-rgb), 0.3); /* Sombra mais forte */
+ }
+        
+ 
 
-/* .language-switcher .lang-btn.active-lang {
-    border-color: var(--skin-color); /* Destaca a bandeira ativa */
-    box-shadow: 0 0 15px rgba(var(--skin-color-rgb), 0.3); /* Sombra mais forte */
-
- */
 
 
 /* ====================================================================
    SECTION TITLE
    ==================================================================== */
-.section-title {
+.section-title 
+{
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
 }
 
-.section-title h2 {
+.section-title h2 #section-title .padd-15 {
+    
+    margin-left: 20px;
     font-size: 40px;
     color: var(--text-black-900);
     font-weight: 700;
@@ -398,7 +401,7 @@ ul {
 
 .home .home-info {
     
-    max-width: 30%; 
+    max-width: 100%; 
     box-sizing: border-box;
    
 }
@@ -874,6 +877,19 @@ h3.my-specification {
 /* ====================================================================
    MEDIA QUERIES (Exemplo de responsividade para tablets e desktops)
    ==================================================================== */
+@media (min-width: 323px) { 
+    .service .service-item,
+    .portfolio .portfolio-item 
+    {
+    
+        max-width: 80%;
+    }
+    .home-img .padd-15
+    {
+        margin-left: 0%;
+    }
+
+}
 @media (min-width: 768px) { /* Para telas maiores que 768px (tablets e desktops) */
     .service .service-item,
     .portfolio .portfolio-item {
@@ -1043,9 +1059,8 @@ h3.my-specification {
 .sociais{
     cursor: pointer;
     content: '';
-    position: absolute;
     top: 0;
-    left: 0;
+    left: 200px;
     right: 0;
     bottom: 0;
     background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%); /* Brilho radial */
@@ -1058,7 +1073,7 @@ h3.my-specification {
     /* seus estilos para a seção inteira, se houver */
     display: block; /* Garanta que ela não está oculta por padrão */
     /* ... outros estilos ... */
-    margin-left: 500px;
+    margin-left: 0px;
 }
 .logosocias a:hover span {
     background-color: var(--text-black-900); /* Muda a cor do fundo do círculo no hover */
@@ -1148,9 +1163,9 @@ h3.my-specification {
         justify-content: center; /* Centraliza os itens na linha */
     }
 
-    .home .home-info {
+    .home .home-info .padd-15 {
      
-        max-width: 30%; /* Define a largura máxima */
+        max-width: 100%; /* Define a largura máxima */
         text-align: left; /* Alinha o texto à esquerda novamente */
     }
 
@@ -1187,5 +1202,45 @@ h3.my-specification {
     }
     .home .home-img {
         max-width: 45%;
+    }
+}
+@media (min-width: 1537px) {
+    .section {
+        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
+    }
+
+    .home .container {
+        /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
+           mas geralmente o padding-left do .section já é suficiente. */
+        padding-left: 0; /* Reinicia o padding do container se o section já tiver */
+        padding-right: 0;
+    }
+    /* Ajustes finos de largura se necessário para maior contraste no desktop */
+    .home .home-info {
+        margin-left: 0%;
+        max-width:45%;
+    }
+    .home .home-img {
+        max-width: 55%;
+    }
+}
+@media (min-width: 1937px) {
+    .section {
+        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
+    }
+
+    .home .container {
+        /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
+           mas geralmente o padding-left do .section já é suficiente. */
+        padding-left: 0; /* Reinicia o padding do container se o section já tiver */
+        padding-right: 0;
+    }
+    /* Ajustes finos de largura se necessário para maior contraste no desktop */
+    .home .home-info {
+        margin-left: 0%;
+        max-width:45%;
+    }
+    .home .home-img {
+        max-width: 55%;
     }
 }
