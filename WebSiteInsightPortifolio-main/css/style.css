@@ -1187,7 +1187,7 @@ h3.my-specification {
 /* --- Media Query para Desktop (com padding para o aside) --- */
 @media (min-width: 992px) {
     .section {
-        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
+        padding-left: 30px; /* Desloca a seção para dar espaço ao aside */
     }
 
     .home .container {
@@ -1206,13 +1206,13 @@ h3.my-specification {
 }
 @media (min-width: 1537px) {
     .section {
-        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
+        padding-left: 30px; /* Desloca a seção para dar espaço ao aside */
     }
 
     .home .container {
         /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
            mas geralmente o padding-left do .section já é suficiente. */
-        padding-left: 0; /* Reinicia o padding do container se o section já tiver */
+        padding-left: 30; /* Reinicia o padding do container se o section já tiver */
         padding-right: 0;
     }
     /* Ajustes finos de largura se necessário para maior contraste no desktop */
@@ -1226,13 +1226,13 @@ h3.my-specification {
 }
 @media (min-width: 1937px) {
     .section {
-        padding-left: 270px; /* Desloca a seção para dar espaço ao aside */
+        padding-left: 30px; /* Desloca a seção para dar espaço ao aside */
     }
 
     .home .container {
         /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
            mas geralmente o padding-left do .section já é suficiente. */
-        padding-left: 0; /* Reinicia o padding do container se o section já tiver */
+        padding-left: 30; /* Reinicia o padding do container se o section já tiver */
         padding-right: 0;
     }
     /* Ajustes finos de largura se necessário para maior contraste no desktop */
