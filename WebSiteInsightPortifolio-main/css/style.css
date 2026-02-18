@@ -485,9 +485,31 @@ h3.my-specification {
 }
 
 .about .about-content .about-text p {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 16px; /* 20px é muito grande para corpo de texto business */
+    line-height: 1.8; /* O segredo da elegância está aqui (espaço entre linhas) */
     color: var(--text-black-700);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Estilizando as listas de Skills */
+.about .about-content .about-text ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.about .about-content .about-text ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Um detalhe elegante: um bullet customizado */
+.about .about-content .about-text ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--skin-color);
 }
 
 .about .about-content .personal-info {

@@ -4,9 +4,9 @@ window.addEventListener('load', function() {
     const typingElement = document.querySelector('.typing');
     if (typingElement) { // Verifica se o elemento .typing existe
         const typed = new Typed('.typing', {
-            strings: ['Web Developer', 'Full Stack Developer', 'Engineer of Software', 'Web Developer'], 
-            typeSpeed: 100,
-            backSpeed: 10,
+            strings: ['Engenheiro de Software','Aspirante a Perito Judicial Especialista em Computação Forence','Especialista em OSINT','DFIR e Consultoria LGPD'], 
+            typeSpeed: 30,
+            backSpeed: 50,
             backDelay: 1000,
             loop: true
         });
