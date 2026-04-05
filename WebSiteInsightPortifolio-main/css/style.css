@@ -5,23 +5,25 @@
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
-    --text-black-700: #302e4d;
-    --text-black-50: #504e70;
+    --text-black-700: #504e70;
 }
 
-/* Estilos para o modo escuro */
 body.dark {
-    background-color: #000000;
-    color: #fff;
-    --bg-black-900: #0a0a0a;
+    --bg-black-900: #000000;
     --bg-black-100: #000000;
-    --bg-black-50: #000000;
-    --text-black-900: #dadada;
-    --text-black-700: #bdb39d;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
 }
 
 /* Estilos padrão (modo claro) */
 body {
+     background-color: var(--bg-black-900);
+    color: white;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif; /* Corrigido: vírgula entre as fontes */
@@ -49,6 +51,12 @@ ul {
 /* ====================================================================
    GLOBAL SECTION E CONTAINER - MOBILE-FIRST
    ==================================================================== */
+
+.main-container {
+    padding-left: 0; /* Padrão para mobile */
+    transition: all 0.3s ease;
+}
+
 .section {
     background: var(--bg-black-900);
     min-height: 100vh;
@@ -58,8 +66,10 @@ ul {
     position: relative; /* Ajuste para controlar com transform */
     top: 0;
     right: 0;
+    width: 100%;
     bottom: 0;
     z-index: 0;
+    overflow: hidden;
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.3s ease;
@@ -94,56 +104,16 @@ ul {
 .container {
     max-width: 1100px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto; /* Isso centraliza o conteúdo sem quebrar o layout */
+    padding: 0 15px;
 }
 
 .section .container {
+    
     padding-top: 60px;
     padding-bottom: 70px;
 }
-/* --- Language Switcher Styles --- */
-.language-switcher {
-    position: absolute; /* Posição absoluta dentro do aside */
-    top: 20px; /* Alinhe com o nav-toggler, mas à direita dele */
-    left: 80px; /* Ajuste essa margem para posicionar corretamente */
-    display: flex;
-    gap: 10px; /* Espaço entre os botões de bandeira */
-    z-index: 21; /* Acima do nav-toggler */
-}
-
-.language-switcher .lang-btn {
-    background: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Tamanho fixo para as bandeiras */
-    height: 30px; /* Altura fixa */
-    overflow: hidden; /* Garante que a imagem não saia do botão */
-}
-
-.language-switcher .lang-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cobre o espaço sem distorcer */
-    border-radius: 3px; /* Borda levemente arredondada para a imagem */
-}
-
-.language-switcher .lang-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
- .language-switcher .lang-btn.active-lang {
-    box-shadow:  0 15px rgba(var(--skin-color-rgb), 0.3); /* Sombra mais forte */
- }
-        
  
-
-
 
 /* ====================================================================
    SECTION TITLE
@@ -163,10 +133,14 @@ ul {
     font-weight: 700;
     position: relative;
 }
+.section-title h2
+{ color: var(--skin-color);
+  font-size: 40px;  
 
+}
 .section-title h2::before {
     content: '';
-    height: 4px;
+    height: 5px;
     width: 50px;
     background-color: var(--skin-color);
     position: absolute;
@@ -176,8 +150,8 @@ ul {
 
 .section-title h2::after {
     content: '';
-    height: 4px;
-    width: 25px;
+    height: 6px;
+    width: 30px;
     background-color: var(--skin-color);
     position: absolute;
     top: 100%;
@@ -189,6 +163,7 @@ ul {
    ROW E BUTTON
    ==================================================================== */
 .row {
+    
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
@@ -223,11 +198,10 @@ ul {
    ASIDE (Menu Lateral) - MOBILE-FIRST
    ==================================================================== */
 .aside {
-    background: var(--bg-black-100);
     position: fixed;
     top: 0;
     left: 0; /* Posição inicial para o transform funcionar */
-    width: 270px; /* Largura padrão do aside */
+    width: 270  px; /* Largura padrão do aside */
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     padding: 20px;
@@ -246,23 +220,24 @@ ul {
 
 .aside .logo {
     position: absolute;
-    top: 50px;
+    top: 30px;
     font-size: 30px;
     text-transform: capitalize;
 }
 
 .aside .logo a {
-    color: var(--text-black-900);
+    color: var(--skin-color);
     font-weight: 700;
     padding: 15px 20px;
-    font-size: 30px;
+    font-size: 60px;
     letter-spacing: 5px;
     position: relative;
 }
 
 .aside .logo a span {
     font-family: 'Clicker Script', cursive;
-    font-size: 40px;
+    font-size: 90px;
+    color: rgba(var(--skin-color-rgb), 0.3);
 }
 
 .aside .logo a::before {
@@ -377,6 +352,7 @@ ul {
    HOME SECTION - MOBILE-FIRST
    ==================================================================== */
 .home {
+   
     min-height: 100vh;
     display: flex;
     align-items: center; /* Centraliza verticalmente o conteúdo */
@@ -386,6 +362,7 @@ ul {
 }
 
 .home .container {
+    
     max-width: 1200px; /* Defina uma largura máxima para o container em telas grandes */
     width: 100%; /* Ocupa 100% da largura do pai */
     padding: 0 15px; /* Padding interno para o container, para evitar bordas coladas */
@@ -393,6 +370,7 @@ ul {
 }
 
 .home .row {
+  
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
     flex-direction: column; /* Por padrão, empilha os itens verticalmente (mobile-first) */
@@ -400,18 +378,20 @@ ul {
 }
 
 .home .home-info {
-    
+  
     max-width: 100%; 
     box-sizing: border-box;
    
 }
 
 h3.hello {
+    
     font-size: clamp(24px, 6vw, 45px); /* Ajuste os tamanhos de fonte para serem responsivos */
     margin: 10px 0;
 }
 
 h3.hello span.name {
+   
     font-family: 'Clicker Script', cursive;
     font-size: clamp(28px, 7vw, 50px);
     font-weight: 700;
@@ -419,6 +399,7 @@ h3.hello span.name {
 }
 
 h3.my-specification {
+
     font-size: clamp(24px, 5.5vw, 45px);
     margin: 10px 0;
 }
@@ -429,6 +410,7 @@ h3.my-specification {
 }
 
 .home-info p {
+
     margin-bottom: 15px; /* Ajuste o espaçamento entre parágrafos */
     font-size: clamp(16px, 3.5vw, 22px); /* Tamanho de fonte responsivo */
     line-height: 1.5; /* Melhora a legibilidade */
@@ -448,6 +430,7 @@ h3.my-specification {
 }
 
 .home .home-img img {
+   
     width: 60%; 
     margin-left: 650px;
     
@@ -464,16 +447,19 @@ h3.my-specification {
    ABOUT SECTION - MOBILE-FIRST
    ==================================================================== */
 .about .about-content {
+  
     flex: 0 0 100%;
     max-width: 100%;
 }
 
 .about .about-content .about-text {
+    
     flex: 0 0 100%;
     max-width: 100%;
 }
 
 .about .about-content .about-text h3 {
+  
     font-size: 30px;
     margin-bottom: 15px;
     font-weight: 700;
@@ -481,12 +467,14 @@ h3.my-specification {
 }
 
 .about .about-content .about-text h3 span {
+   
     color: var(--skin-color);
 }
 
 .about .about-content .about-text p {
-    font-size: 16px; /* 20px é muito grande para corpo de texto business */
-    line-height: 1.8; /* O segredo da elegância está aqui (espaço entre linhas) */
+    
+    font-size: 16px; 
+    line-height: 1.8;
     color: var(--text-black-700);
     margin-bottom: 20px;
     text-align: justify;
@@ -504,8 +492,9 @@ h3.my-specification {
     padding-left: 20px;
 }
 
-/* Um detalhe elegante: um bullet customizado */
+
 .about .about-content .about-text ul li::before {
+   
     content: '▹';
     position: absolute;
     left: 0;
@@ -513,18 +502,21 @@ h3.my-specification {
 }
 
 .about .about-content .personal-info {
+   
     flex: 0 0 100%; /* Padrão 100% para mobile */
     max-width: 100%;
     margin-top: 40px;
 }
 
 .about .about-content .personal-info .info-item {
+   
     flex: 0 0 100%; /* Padrão 100% para mobile */
     max-width: 100%;
     text-align: center; /* Centraliza o texto em mobile */
 }
 
 .about .about-content .personal-info .info-item p {
+ 
     font-weight: 600;
     padding: 10px 0;
     font-size: 20px;
@@ -560,6 +552,7 @@ h3.my-specification {
 }
 
 .about .about-content .skills .skill-item h5 {
+  
     line-height: 40px;
     font-weight: 600;
     font-size: 16px;
@@ -605,6 +598,7 @@ h3.my-specification {
 }
 
 .about .about-content h3.title {
+   
     font-size: 24px;
     margin-bottom: 30px;
     font-weight: 700;
@@ -686,10 +680,12 @@ h3.my-specification {
    SERVICE SECTION - MOBILE-FIRST
    ==================================================================== */
 .service .container {
+    
     padding-bottom: 40px;
 }
 
 .service .service-item {
+   
     margin-bottom: 30px;
     flex: 0 0 100%; /* Padrão 100% para mobile */
     max-width: 100%;
@@ -709,6 +705,7 @@ h3.my-specification {
 }
 
 .service .service-item .service-item-inner:hover {
+    
     transform: scale(1.05); /* Faz o item crescer 5% ao passar o mouse */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
@@ -725,13 +722,17 @@ h3.my-specification {
     transition: opacity 0.3s ease;
     pointer-events: none; /* Garante que o brilho não interfira com eventos do mouse */
     z-index: -1; /* Coloca o brilho atrás do conteúdo */
+   
+
 }
 
 .service .service-item .service-item-inner:hover::before {
+  
     opacity: 0.2; /* Torna o brilho visível (20% de opacidade) */
 }
 
 .service .service-item .service-item-inner .icon {
+   
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -749,15 +750,18 @@ h3.my-specification {
 }
 
 .service .service-item .service-item-inner:hover .icon {
+   
     background-color: var(--skin-color);
 }
 
 .service .service-item .service-item-inner:hover .icon .fa {
+ 
     font-size: 20px;
     color: #ffffff;
 }
 
 .service .service-item .service-item-inner h4 {
+   
     font-size: 25px;
     margin-bottom: 15px;
     color: var(--text-black-900);
@@ -766,6 +770,7 @@ h3.my-specification {
 }
 
 .service .service-item .service-item-inner p {
+  
     font-size: 20px;
     color: var(--text-black-700);
     line-height: 25px;
@@ -775,16 +780,19 @@ h3.my-specification {
    PORTFOLIO SECTION - MOBILE-FIRST (COM ALTERAÇÕES PARA OVERLAY)
    ==================================================================== */
 .portfolio .container {
+   
     padding-bottom: 40px;
 }
 
 .portfolio .portfolio-heading {
+    
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
 }
 
 .portfolio .portfolio-heading h2 {
+    
     text-align: center;
     font-size: 28px; /* Ajustado para ser visível */
     color: var(--skin-color);
@@ -792,6 +800,7 @@ h3.my-specification {
 }
 
 .portfolio .portfolio-item {
+   
     flex: 0 0 100%; /* Padrão 100% para mobile */
     max-width: 100%;
     margin-bottom: 30px;
@@ -931,6 +940,7 @@ h3.my-specification {
    CONTACT SECTION - MOBILE-FIRST
    ==================================================================== */
 .contact-title {
+    
     color: var(--skin-color);
     text-align: center;
     font-size: 25px;
@@ -938,6 +948,7 @@ h3.my-specification {
 }
 
 .contact-sub-title {
+   
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
@@ -945,6 +956,7 @@ h3.my-specification {
 }
 
 .contact .contact-info-item {
+   
     flex: 0 0 100%; /* Padrão 100% para mobile */
     max-width: 100%;
     text-align: center;
@@ -952,6 +964,7 @@ h3.my-specification {
 }
 
 .contact .contact-info-item .icon {
+   
     display: inline-block;
 }
 
@@ -961,6 +974,7 @@ h3.my-specification {
 }
 
 .contact .contact-info-item h4 {
+   
     font-size: 18px;
     font-weight: 700;
     color: var(--text-black-900);
@@ -969,59 +983,18 @@ h3.my-specification {
 }
 
 .contact .contact-info-item p {
+   
     font-size: 20px;
     line-height: 25px;
     color: var(--text-black-700);
-    font-weight: 400;
+    font-weight: 400;   
 }
 
 .contact .contact-info-item a {
+   
     font-size: 30px;
 }
 
-.contact .contact-form {
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-.contact .contact-form .col-6 {
-    flex: 0 0 100%; /* Padrão 100% para mobile */
-    max-width: 100%;
-}
-
-.contact .contact-form .col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-.contact .contact-form .form-item {
-    margin-bottom: 30px;
-}
-
-.contact .contact-form .form-item .form-control {
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    padding: 10px 25px;
-    font-size: 16px;
-    color: var(--text-black-700);
-    transition: all 0.3s ease;
-}
-
-.contact .contact-form .form-item .form-control:focus {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-
-.contact .contact-form .form-item .-textarea-form-control {
-    height: 140px;
-}
-
-.contact .contact-form .btn {
-    height: 50px;
-    padding: 0 50px;
-}
 
 /* ====================================================================
    SOCIALS
@@ -1096,7 +1069,10 @@ h3.my-specification {
     display: block; /* Garanta que ela não está oculta por padrão */
     /* ... outros estilos ... */
     margin-left: 0px;
+    /* margin-bottom: 0px; */
 }
+
+
 .logosocias a:hover span {
     background-color: var(--text-black-900); /* Muda a cor do fundo do círculo no hover */
     color: var(--skin-color); /* Mantém a cor do ícone ou muda se quiser */
@@ -1181,6 +1157,7 @@ h3.my-specification {
 
 @media (min-width: 768px) {
     .home .row {
+        
         flex-direction: row; /* Volta a organizar os itens em linha */
         justify-content: center; /* Centraliza os itens na linha */
     }
@@ -1213,8 +1190,7 @@ h3.my-specification {
     }
 
     .home .container {
-        /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
-           mas geralmente o padding-left do .section já é suficiente. */
+        
         padding-left: 0; /* Reinicia o padding do container se o section já tiver */
         padding-right: 0;
     }
@@ -1226,15 +1202,23 @@ h3.my-specification {
         max-width: 45%;
     }
 }
+
+/* Somente em telas grandes (Desktop) o conteúdo dá espaço para o menu lateral */
+@media (min-width: 1200px) {
+    .main-container {
+        padding-left: 300px; /* Largura exata do aside */
+    }
+}
 @media (min-width: 1537px) {
     .section {
         padding-left: 30px; /* Desloca a seção para dar espaço ao aside */
     }
 
     .home .container {
+        
         /* Se o aside estiver fixo e "empurrando" o conteúdo, pode ser necessário ajustar o padding ou margin-left aqui,
            mas geralmente o padding-left do .section já é suficiente. */
-        padding-left: 30; /* Reinicia o padding do container se o section já tiver */
+        padding-left:-30; /* Reinicia o padding do container se o section já tiver */
         padding-right: 0;
     }
     /* Ajustes finos de largura se necessário para maior contraste no desktop */
